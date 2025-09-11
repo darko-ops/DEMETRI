@@ -1,0 +1,203 @@
+sudo tee /var/www/demetri.xyz/index.html >/dev/null <<'HTML'
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DEMETRI — builder, designer, security</title>
+  <meta name="description" content="Demetri — founding builder behind Bouncr & RRSRCH. Security, AI governance, and minimalist design." />
+  <link rel="canonical" href="https://demetri.xyz/" />
+  <meta property="og:title" content="DEMETRI — builder, designer, security" />
+  <meta property="og:description" content="Security, AI governance, and minimalist design." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://demetri.xyz/" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/0b0b0b/ffffff&text=DEMETRI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";color:#e7e7e7;background:#0a0a0a;line-height:1.6;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    :root{--bg:#0a0a0a;--bg-soft:#0d0d0f;--fg:#e7e7e7;--muted:#a0a0a0;--accent:#7dd3fc;--accent-2:#a78bfa;--card:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.12);--radius:18px;--shadow:0 20px 40px rgba(0,0,0,.45)}
+    .bg-wrap{position:fixed;inset:0;z-index:-1;background:radial-gradient(800px 500px at 80% -10%, rgba(124,58,237,.25), transparent 60%),radial-gradient(900px 600px at -10% 10%, rgba(56,189,248,.2), transparent 60%),linear-gradient(180deg,#0b0b0b 0%,#09090b 60%,#080808 100%);overflow:hidden}
+    .bg-grid{position:absolute;inset:0;background-image:linear-gradient(transparent 97%, rgba(255,255,255,.06) 98%),linear-gradient(90deg, transparent 97%, rgba(255,255,255,.06) 98%);background-size:36px 36px;mask-image:radial-gradient(closest-side at 50% 20%, rgba(0,0,0,.85), transparent 85%)}
+    .stars{position:absolute;inset:-100px;background:radial-gradient(1px 1px at 20% 30%, #fff8, transparent 60%),radial-gradient(1px 1px at 80% 10%, #fff8, transparent 60%),radial-gradient(1px 1px at 60% 70%, #fff6, transparent 60%),radial-gradient(1px 1px at 10% 80%, #fff9, transparent 60%)}
+    .container{max-width:1000px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .brand-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg, rgba(167,139,250,.25), rgba(125,211,252,.25));border:1px solid var(--border);box-shadow:var(--shadow)}
+    .brand-mark svg{width:20px;height:20px}
+    nav a{padding:8px 12px;border-radius:999px;border:1px solid transparent}
+    nav a:hover{border-color:var(--border);background:rgba(255,255,255,.04)}
+    .hero{padding:64px 0 36px}
+    .eyebrow{color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+    .title{font-size:clamp(32px,4.5vw,56px);line-height:1.1;margin:.2em 0 .3em;font-weight:800}
+    .sub{color:#c9c9c9;max-width:48ch}
+    .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:var(--card);backdrop-filter:blur(6px)}
+    .btn:hover{transform:translateY(-1px);transition:.2s ease;box-shadow:var(--shadow)}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+    @media(min-width:800px){.grid{grid-template-columns:1.2fr .8fr}}
+    .card{border:1px solid var(--border);background:var(--card);border-radius:var(--radius);padding:22px}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:#cfcfcf}
+    footer{margin:46px 0 12px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+    .links{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.03)}
+    .chip svg{width:16px;height:16px}
+    .fade-up{opacity:0;transform:translateY(8px);animation:fadeUp .7s .05s forwards}
+    .fade-up2{opacity:0;transform:translateY(10px);animation:fadeUp .8s .12s forwards}
+    .fade-up3{opacity:0;transform:translateY(12px);animation:fadeUp .9s .2s forwards}
+    @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+    .muted{color:var(--muted)}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+
+    /* ===== Mobile-first order for Work cards ===== */
+    .work-grid{
+      display:grid;
+      gap:14px;
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "proof"
+        "ui";
+      margin-top:16px;
+    }
+    .work-grid .feature--proof{grid-area:proof;}
+    .work-grid .feature--ui{grid-area:ui;}
+
+    @media(min-width:800px){
+      .work-grid{
+        grid-template-columns:1fr 1fr;
+        grid-template-areas:"proof ui";
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-wrap" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="stars"></div>
+  </div>
+
+  <div class="container">
+    <header class="fade-up">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true" title="Δ (delta) — change by design">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 4l9 16H3z"/>
+            <path d="M12 9l5.5 9H6.5z" opacity=".45"/>
+          </svg>
+        </span>
+        <span>DEMETRI</span>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <p class="eyebrow fade-up">Builder • Design • Security</p>
+        <h1 class="title fade-up2">Making the complex simple.</h1>
+        <p class="sub fade-up3">Founder of <span class="mono">RRSRCH</span> (an independent lab) and <span class="mono">Bouncr</span> (governance for human + agent identities). Focused on cybersecurity, AI autonomy, access governance, and intuitive design.</p>
+        <div class="cta-row fade-up3" role="group" aria-label="Primary actions">
+          <a class="btn" href="#contact" aria-label="Email Demetri">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <span>Say hello</span>
+          </a>
+          <a class="btn" href="#work" aria-label="See projects">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            <span>See work</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Content grid: About + Contact -->
+      <section class="grid" id="about">
+        <article class="card">
+          <h3>About</h3>
+          <p>I'm Demetri — product-minded security founder based in North Carolina. I like turning messy problems into elegant, verifiable flows. Recently: exploring research and design work at <strong>RRSRCH</strong> and shipping <strong>Bouncr</strong>, a governance layer for human + AI identities.</p>
+          <p class="muted" style="margin-top:10px">Interests: AI autonomy, identity & access governance, cryptographic logs, humane interfaces, Muay Thai and movies.</p>
+        </article>
+
+        <aside class="card" id="contact" aria-label="Contact">
+          <h3>Contact</h3>
+          <p>Best way to reach me: email. I read some of these.</p>
+          <div class="links" style="margin-top:10px">
+            <a class="chip" href="mailto:demetri@rrsrch.com" rel="me" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+              <span>demetri@rrsrch.com</span>
+            </a>
+            <a class="chip" href="https://www.linkedin.com/in/demetri-hodges-418534195/" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a class="chip" href="https://github.com/darko-ops" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.3-.39-2.6-1.3-3.5.3-1 0-2.2 0-2.5 0 0-1 .2-2.6 1.3-2.4-.6-4.9-.6-7.3 0C5.2 1.7 4.2 1.5 4.2 1.5c0 .3-.3 1.5 0 2.5-.9.9-1.4 2.2-1.3 3.5 0 3.5 3 5.5 6 5.5-.5.6-.8 1.4-.9 2.2-.1.8 0 1.6 0 2.3"/></svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Work -->
+      <section id="work" style="margin-top:30px">
+        <div class="card" style="padding:24px 24px 10px">
+          <h3>Current Work</h3>
+          <div class="links" style="margin-top:8px">
+            <a class="chip" href="https://rrsrch.com" title="RRSRCH – independent lab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>RRSRCH</span>
+            </a>
+            <a class="chip" href="https://bouncr.tech" title="Bouncr – identity & autonomy governance">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h12"/><path d="M14 2v6l5.5 9.5a3 3 0 0 1-2.6 4.5H7.1A3 3 0 0 1 4.6 17.5L10 8V2"/></svg>
+              <span>Bouncr</span>
+            </a>
+            <a class="chip" href="https://the86ed.net" title="The 86ed – clothing line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h8l4 3-2 2v9H6V11L4 9l4-3z"/></svg>
+              <span>The 86ed</span>
+            </a>
+          </div>
+
+          <!-- MOBILE-FIRST order: Proof first, UI second -->
+          <div class="work-grid">
+            <article class="card feature--proof">
+              <h3>Proof & Control</h3>
+              <p>Designing cryptographic logs, portable checkpoints, and risk-tiered enforcement for mixed human/agent systems.</p>
+            </article>
+            <article class="card feature--ui">
+              <h3>Clean, Calm UI</h3>
+              <p>Minimal surfaces that expose exactly what matters — clear state, reversible actions, and audit-ready context.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Demetri. All rights reserved.</span>
+      <div class="links">
+        <a class="chip" href="mailto:demetri@rrsrch.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <span>Email</span>
+        </a>
+        <a class="chip" href="#about">About</a>
+        <a class="chip" href="#work">Work</a>
+      </div>
+    </footer>
+  </div>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Demetri","url":"https://demetri.xyz/","email":"mailto:demetri@rrsrch.com","jobTitle":"Founder / Security & Product","affiliation":[{"@type":"Organization","name":"RRSRCH"},{"@type":"Organization","name":"Bouncr"},{"@type":"Organization","name":"The 86ed"}]}
+  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+HTML
