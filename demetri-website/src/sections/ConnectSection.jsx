@@ -11,12 +11,11 @@ const ConnectSection = () => {
   return (
     <SectionLayout 
       label={content.label}
-      quoteText="ALONE WE CAN DO\nSO LITTLE; TOGETHER\nWE CAN DO SO MUCH."
-      quoteAuthor="HELEN KELLER"
+      quoteText="DESTRUCTION IS A FORM OF CREATION."
+      quoteAuthor="GRAHAM GREENE"
     >
       <PageHeader 
         subtitle={content.subtitle}
-        description={content.description}
       />
       <ContactList />
     </SectionLayout>

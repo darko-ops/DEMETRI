@@ -37,20 +37,20 @@ export const CAROUSEL_CONFIG = {
     },
     blog: {
       title: "BLOG",
-      label: "WRITE",
-      subtitle: "[WRITE]",
-      description: "Writing as thinking. The blog is where ideas get tested, refined, and archived. Essays on design, systems thinking, intelligence, and the patterns that connect them. Each post traces a thread—sometimes technical, sometimes philosophical—always focused on understanding how things work and why they matter.",
+      label: "READ",
+      subtitle: "[READ]",
+      description: "A space for thoughts across design, systems, culture, and perspective. Each piece follows how ideas connect and how concepts take form over time — exploring thoughts in progress, connections, and moments of clarity.",
     },
     projects: {
       title: "PROJECTS",
-      label: "BUILD",
-      subtitle: "[BUILD]",
-      description: "Projects are experiments in form and function. From RRSRCH (independent research lab) to Bouncr (governance for AI identities) to The 86ed (minimalist clothing line)—each project explores different aspects of design, security, and systems thinking. Work that matters, built with intention.",
+      label: "EXPLORE",
+      subtitle: "[EXPLORE]",
+      description: "An ongoing collection of works through creation and exploration. Each project experiments with how structure, logic, and design shape what’s possible — solving problems through research and intuitition.",
     },
     connect: {
       title: "CONNECT",
-      label: "CONNECT",
-      subtitle: "[CONNECT]",
+      label: "CONTACT",
+      subtitle: "[CONTACT]",
       description: "Interested in collaborating, discussing ideas, or just saying hello? Best way to reach me is email. I read most of these and respond when I can. Also available on LinkedIn and GitHub for professional connections.",
     }
   };

@@ -31,7 +31,15 @@ const HomeContent = ({ activeSection, onSectionChange }) => {
       text: SECTION_CONTENT[activeSection]?.description || ''
     };
   };
-
+  const handleSubtitleClick = () => {
+    if (activeSection) {
+      // Scroll to the section content below
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    }
+  };
   const titleText = getTitleText();
   const quote = getQuote();
   const context = getContext();
@@ -152,29 +160,27 @@ const styles = {
   },
   subtitle: {
     fontFamily: '"Inter", sans-serif',
-    fontSize: theme.typography.sizes['2xl'],
+    fontSize: theme.typography.sizes.lg,  // Changed from '2xl' to 'lg' (18px)
     fontWeight: 700,
-    letterSpacing: '0.01em',
-    color: '#545454',
-    textAlign: 'left',   // Add this
-    alignItems: 'left',
-    width: '100%',       // Add this
+    letterSpacing: '0.1em',
+    color: '#537385',
+    textAlign: 'right',
+    width: '100%',
+    marginBottom: theme.spacing.lg,  // Added margin below subtitle
   },
 
   contextText: {
+    fontFamily: '"Inter", sans-serif',
     fontFamily: '"Inter", sans-serif',
     fontSize: '16px',
     fontWeight: 400,
     lineHeight: 1.8,
     color: '#7a7a7a',
     margin: 0,
-    textAlign: 'left',        // Add this
-    width: '100%',            // Add this
-    hyphens: 'none',          // Prevent hyphenation
-    wordSpacing: 'normal',    // Ensure normal word spacing
-    maxWidth: '600px',
-    width: '140%',
-    marginLeft: '-100px',
+    textAlign: 'right',
+    maxWidth: '600px',  // Removed conflicting width properties
+    hyphens: 'none',
+    wordSpacing: 'normal',
   },
 };
 

@@ -45,7 +45,7 @@ export const theme = {
     layout: {
       maxWidth: '1400px',
       contentMaxWidth: '800px',
-      centerColumnWidth: '600px',
+      centerColumnWidth: '300px',
     },
     
     transitions: {
