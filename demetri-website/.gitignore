@@ -26,6 +26,7 @@ dist-ssr
 aws server
 ssh -i ~/Downloads/rrsrch-labs.pem ubuntu@54.196.234.50
 
+npm run build
 scp -i ~/Downloads/rrsrch-labs.pem -r dist/* ubuntu@54.196.234.50:/var/www/demetri.xyz/
 
 
