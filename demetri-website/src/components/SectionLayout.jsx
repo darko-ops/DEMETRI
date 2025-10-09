@@ -23,7 +23,7 @@ const styles = {
   selectedContent: {
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: `${theme.spacing['5xl']} ${theme.spacing['4xl']}`,
+    padding: `${theme.spacing.xl} ${theme.spacing['4xl']}`,
     position: 'relative',
     minHeight: 'calc(100vh - 200px)',
   },

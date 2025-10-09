@@ -1,27 +1,18 @@
 // src/sections/PodcastSection.jsx
 import React from 'react';
-import SectionLayout from '../components/SectionLayout';
-import PageHeader from '../components/PageHeader';
-import PodcastCarousel from '../components/PodcastCarousel';
+import PodcastDisplay from '../components/PodcastDisplay';
 import { useEpisodes } from '../hooks/useEpisodes';
-import { SECTION_CONTENT, QUOTES } from '../utils/constants';
 import { theme } from '../styles/theme';
 
 const PodcastSection = () => {
   const { episodes, loading, error } = useEpisodes();
-  const content = SECTION_CONTENT.podcast;
-  const quote = QUOTES.podcast;
 
   return (
-    <SectionLayout 
-      label={content.label}
-      quoteText="YOU HAVE ENEMIES? GOOD.\nTHAT MEANS YOU STOOD\nUP FOR SOMETHING,\nSOMETIME IN YOUR LIFE."
-      quoteAuthor="WINSTON CHURCHILL"
-    >
-      <PageHeader 
-        subtitle={content.subtitle}
-        description={content.description}
-      />
+    <div style={styles.podcastSection}>
+      <h1 style={styles.title}>Audio</h1>
+      <p style={styles.subtitle}>
+        Exploring intelligence, design, and human progress through conversation
+      </p>
       
       {error && (
         <div style={styles.error} role="alert">
@@ -32,13 +23,37 @@ const PodcastSection = () => {
       {loading ? (
         <div style={styles.loading}>Loading episodes...</div>
       ) : (
-        <PodcastCarousel episodes={episodes} />
+        <PodcastDisplay episodes={episodes} />
       )}
-    </SectionLayout>
+    </div>
   );
 };
 
 const styles = {
+  podcastSection: {
+    maxWidth: '1400px',
+    margin: '0 auto',
+    padding: `0 ${theme.spacing['4xl']} ${theme.spacing.xl}`,
+    minHeight: 'calc(100vh - 200px)',
+  },
+  title: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.sizes['2xl'],
+    fontWeight: theme.typography.weights.bold,
+    letterSpacing: '-0.02em',
+    color: theme.colors.secondary,
+    textAlign: 'center',
+    margin: `${theme.spacing.md} 0 ${theme.spacing.sm}`,
+  },
+  subtitle: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.sizes.base,
+    fontWeight: theme.typography.weights.normal,
+    color: theme.colors.text,
+    textAlign: 'center',
+    margin: `0 auto ${theme.spacing.xl}`,
+    maxWidth: '700px',
+  },
   error: {
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.sizes.base,
@@ -47,7 +62,7 @@ const styles = {
     padding: theme.spacing.xl,
     background: '#fee2e2',
     border: '1px solid #fecaca',
-    borderRadius: '4px',
+    borderRadius: '8px',
     marginBottom: theme.spacing.xl,
   },
   loading: {

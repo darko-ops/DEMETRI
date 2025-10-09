@@ -62,15 +62,16 @@ export const CAROUSEL_CONFIG = {
       url: "https://rrsrch.com"
     },
     {
-      name: "BOUNCR",
-      description: "Governance for AI identities",
-      url: "https://bouncr.tech"
-    },
+        name: "OBIUS",
+        description: "Coming soon",
+        url: "https://obius.io"
+      },
     {
       name: "THE 86ED",
       description: "Minimalist clothing line",
       url: "https://the86ed.net"
     }
+
   ];
   
   export const CONTACTS = [
@@ -84,9 +85,16 @@ export const CAROUSEL_CONFIG = {
       value: "Demetri Hodges",
       url: "https://www.linkedin.com/in/demetri-hodges-418534195/"
     },
+  ];
+
+  // Blog posts array - add your posts here
+export const BLOG_POSTS = [
     {
-      label: "GITHUB",
-      value: "darko-ops",
-      url: "https://github.com/darko-ops"
-    }
+        id: 4,
+        title: "Mass Drift Theory",
+        date: "May 2025",
+        url: "/papers/Mass Drift Theory- A Macrodynamic Framework for Systemic Shifts in Collective Opinion.pdf"
+    },
+    
+    // Add more posts as needed dont forget comma
   ];

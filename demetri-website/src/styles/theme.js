@@ -7,8 +7,9 @@ export const theme = {
       heading: '#1a1a1a',
       lightGray: '#6b7280',
       border: '#d1d5db',
-      background: '#eaedf0',
+      background: '#ffffff',
       white: '#ffffff',
+      plum: '#3f353d',
     },
     
     typography: {

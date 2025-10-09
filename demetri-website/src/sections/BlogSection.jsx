@@ -1,24 +1,33 @@
 // src/sections/BlogSection.jsx
 import React from 'react';
-import SectionLayout from '../components/SectionLayout';
-import PageHeader from '../components/PageHeader';
-import { SECTION_CONTENT } from '../utils/constants';
+import BlogGrid from '../components/BlogGrid';
+import { theme } from '../styles/theme';
 
 const BlogSection = () => {
-  const content = SECTION_CONTENT.blog;
-
   return (
-    <SectionLayout 
-      label={content.label}
-      quoteText="WRITING IS THINKING.\nTO WRITE WELL IS TO\nTHINK CLEARLY."
-      quoteAuthor="DAVID MCCULLOUGH"
-    >
-      <PageHeader 
-        subtitle={content.subtitle}
-        description={content.description}
-      />
-    </SectionLayout>
+    <div style={styles.blogSection}>
+      <h1 style={styles.title}>Notes_</h1>
+      <BlogGrid />
+    </div>
   );
+};
+
+const styles = {
+  blogSection: {
+    maxWidth: '1400px',
+    margin: '0 auto',
+    padding: `0 ${theme.spacing['4xl']} ${theme.spacing.xl}`,
+    minHeight: 'calc(100vh - 200px)',
+  },
+  title: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.sizes['2xl'],
+    fontWeight: theme.typography.weights.bold,
+    letterSpacing: '-0.02em',
+    color: theme.colors.secondary,
+    textAlign: 'left',
+    margin: `${theme.spacing['0xl']} 0`,
+  },
 };
 
 export default BlogSection;

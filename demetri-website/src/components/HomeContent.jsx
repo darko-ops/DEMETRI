@@ -33,19 +33,34 @@ const HomeContent = ({ activeSection, onSectionChange }) => {
   };
   const handleSubtitleClick = () => {
     if (activeSection) {
-      // Scroll to the section content below
+      // Calculate the height to scroll: hero (100vh) + home section height
+      const heroHeight = window.innerHeight;
+      const homeSection = document.querySelector('[data-home-section]');
+      const homeSectionHeight = homeSection ? homeSection.offsetHeight : 0;
+      
       window.scrollTo({
-        top: window.innerHeight,
+        top: heroHeight + homeSectionHeight,
         behavior: 'smooth'
       });
     }
+  };
+
+  const getSubtitleStyle = () => {
+    if (!activeSection) {
+      return {
+        ...styles.subtitle,
+        cursor: 'default',
+        opacity: 1,
+      };
+    }
+    return styles.subtitle;
   };
   const titleText = getTitleText();
   const quote = getQuote();
   const context = getContext();
 
   return (
-    <div style={styles.homeSection}>
+    <div style={styles.homeSection} data-home-section>
       <div style={styles.threeColumnLayout}>
         {/* Left Column */}
         <div style={styles.leftColumn}>
@@ -71,12 +86,34 @@ const HomeContent = ({ activeSection, onSectionChange }) => {
           <Navigation 
             activeSection={activeSection}
             onSectionChange={onSectionChange}
+
           />
         </div>
 
         {/* Right Column - Context */}
         <div style={styles.rightColumn}>
-          <h4 style={styles.subtitle}>{context.subtitle}</h4>
+          <button 
+            onClick={handleSubtitleClick}
+            style={getSubtitleStyle()}
+            disabled={!activeSection}
+            onMouseEnter={(e) => {
+              if (activeSection) {
+                e.target.style.opacity = '0.7';
+                
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (activeSection) {
+                e.target.style.opacity = '1';
+                e.target.style.transform = 'translateY(0)';
+              }
+            }}
+          >
+            {context.subtitle}
+            {activeSection && (
+              <span style={styles.arrowIcon}></span>
+            )}
+          </button>
           <p style={styles.contextText}>{context.text}</p>
         </div>
       </div>
@@ -88,7 +125,7 @@ const styles = {
   homeSection: {
     maxWidth: theme.layout.maxWidth,
     margin: '0 auto',
-    padding: `${theme.spacing['5xl']} ${theme.spacing['4xl']}`,
+    padding: `${theme.spacing['3xl']} ${theme.spacing['4xl']} ${theme.spacing.xl}`,
     position: 'relative',
     minHeight: '100vh',
     background: theme.colors.background,
@@ -98,14 +135,14 @@ const styles = {
     gridTemplateColumns: `minmax(0, 1fr) ${theme.layout.centerColumnWidth} minmax(0, 1fr)`,
     gap: theme.spacing['5xl'],
     alignItems: 'start',
-    minHeight: '80vh',
+    minHeight: '70vh',
   },
   leftColumn: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'stretch',
-    minHeight: '80vh',
+    minHeight: '70vh',
   },
   leftCenterGroup: {
     display: 'flex',
@@ -145,7 +182,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: '80vh',
+    minHeight: '70vh',
     position: 'sticky',
     top: '10vh',
     width: theme.layout.centerColumnWidth,
@@ -156,17 +193,17 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'stretch',
-    minHeight: '80vh',
+    minHeight: '100vh',
   },
   subtitle: {
     fontFamily: '"Inter", sans-serif',
-    fontSize: theme.typography.sizes.lg,  // Changed from '2xl' to 'lg' (18px)
+    fontSize: theme.typography.sizes.lg,
     fontWeight: 700,
     letterSpacing: '0.1em',
     color: '#537385',
     textAlign: 'right',
     width: '100%',
-    marginBottom: theme.spacing.lg,  // Added margin below subtitle
+    marginBottom: theme.spacing.lg,
   },
 
   contextText: {
@@ -178,7 +215,7 @@ const styles = {
     color: '#7a7a7a',
     margin: 0,
     textAlign: 'right',
-    maxWidth: '600px',  // Removed conflicting width properties
+    maxWidth: '600px',
     hyphens: 'none',
     wordSpacing: 'normal',
   },
