@@ -9,7 +9,7 @@ const PodcastSection = () => {
 
   return (
     <div style={styles.podcastSection}>
-      <h1 style={styles.title}>Audio</h1>
+      <h1 style={styles.title}>Episodes</h1>
       <p style={styles.subtitle}>
         Exploring intelligence, design, and human progress through conversation
       </p>
@@ -42,7 +42,7 @@ const styles = {
     fontWeight: theme.typography.weights.bold,
     letterSpacing: '-0.02em',
     color: theme.colors.secondary,
-    textAlign: 'center',
+    textAlign: 'left',
     margin: `${theme.spacing.md} 0 ${theme.spacing.sm}`,
   },
   subtitle: {
@@ -50,7 +50,7 @@ const styles = {
     fontSize: theme.typography.sizes.base,
     fontWeight: theme.typography.weights.normal,
     color: theme.colors.text,
-    textAlign: 'center',
+    textAlign: 'left',
     margin: `0 auto ${theme.spacing.xl}`,
     maxWidth: '700px',
   },
