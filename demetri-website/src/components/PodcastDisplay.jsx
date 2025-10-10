@@ -56,7 +56,7 @@ const PodcastDisplay = ({ episodes }) => {
       {recentEpisodes.length > 0 && (
         <div style={styles.recentSection}>
           <h3 style={styles.recentTitle}>Recent Episodes</h3>
-          <div style={styles.recentGrid}>
+          <div style={styles.recentGrid} data-recent-grid>
             {recentEpisodes.map((episode) => (
               <a
                 key={episode.id}

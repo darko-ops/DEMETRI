@@ -5,7 +5,7 @@ import { theme } from '../styles/theme';
 
 const ContactGrid = () => {
   return (
-    <div style={styles.gridContainer} data-contact-grid>
+    <div style={styles.gridContainer}>
       {CONTACTS.map((contact) => (
         <a 
           key={contact.label}

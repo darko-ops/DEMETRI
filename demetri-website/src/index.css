@@ -11,7 +11,7 @@ body {
 
 /* Completely remove all button default styles */
 button {
-  outline: none !important;
+  outline: transparent !important;
   border: none;
   background: none;
   -webkit-appearance: none;

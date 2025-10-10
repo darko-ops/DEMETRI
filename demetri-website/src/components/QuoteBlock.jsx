@@ -15,8 +15,9 @@ QuoteBlock.displayName = 'QuoteBlock';
 
 const styles = {
   container: {
-    textAlign: 'flex-start',
-    alignItems: 'center',
+    textAlign: 'left',
+    alignItems: 'flex-start',
+    width: '100%',
   },
   quote: {
     fontFamily: theme.typography.fontFamily,

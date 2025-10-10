@@ -34,6 +34,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: theme.spacing.xl,
+    width: '100%',
+    maxWidth: theme.layout.centerColumnWidth,
   },
   navStackItem: {
     fontFamily: theme.typography.fontFamily,
@@ -42,7 +44,7 @@ const styles = {
     letterSpacing: '0.15em',
     padding: `${theme.spacing.sm} ${theme.spacing.xl}`,
     background: 'transparent',
-    border: `1px solid ${theme.colors.border}`,  // ← Change from transparent to theme.colors.border
+    border: `none`,
     color: theme.colors.text,
     cursor: 'pointer',
     transition: `all ${theme.transitions.fast}`,
@@ -51,7 +53,6 @@ const styles = {
     outline: 'none',
     WebkitTapHighlightColor: 'transparent',
     userSelect: 'none',
-    border: '1px solid transparent',
     boxShadow: 'none',
     WebkitBoxShadow: 'none',
   },
@@ -59,13 +60,9 @@ const styles = {
     color: theme.colors.heading,
     borderColor: 'transparent',
     outline: 'none',
-    border: '1px solid transparent',
     boxShadow: 'none',
     WebkitBoxShadow: 'none',
     background: 'transparent',
-    border: 'transparent',
-    outline: 'transparent',                 // remove default outline
-    WebkitTapHighlightColor: 'transparent',
   },
 };
 

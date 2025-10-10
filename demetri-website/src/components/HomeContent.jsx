@@ -61,9 +61,9 @@ const HomeContent = ({ activeSection, onSectionChange }) => {
 
   return (
     <div style={styles.homeSection} data-home-section>
-      <div style={styles.threeColumnLayout}>
+      <div style={styles.threeColumnLayout} data-three-column>
         {/* Left Column */}
-        <div style={styles.leftColumn}>
+        <div style={styles.leftColumn} data-left-column>
           <div style={styles.leftCenterGroup}>
             <h3 style={styles.leftWebsiteName}>
               DEMETRI<span style={{ color: theme.colors.primary }}>.XYZ</span>
@@ -72,34 +72,33 @@ const HomeContent = ({ activeSection, onSectionChange }) => {
             <h2 style={{
               ...styles.pageName,
               letterSpacing: getTightTracking(titleText),
-            }}>
+            }} data-page-name>
               {titleText}
             </h2>
           </div>
-          <div style={styles.quoteWrapper}>
+          <div style={styles.quoteWrapper} data-quote-wrapper>
             <QuoteBlock text={quote.text} author={quote.author} />
           </div>
         </div>
 
         {/* Center Column - Navigation */}
-        <div style={styles.centerColumn}>
+        <div style={styles.centerColumn} data-center-column>
           <Navigation 
             activeSection={activeSection}
             onSectionChange={onSectionChange}
-
           />
         </div>
 
         {/* Right Column - Context */}
-        <div style={styles.rightColumn}>
+        <div style={styles.rightColumn} data-right-column>
           <button 
             onClick={handleSubtitleClick}
             style={getSubtitleStyle()}
             disabled={!activeSection}
+            data-subtitle-button
             onMouseEnter={(e) => {
               if (activeSection) {
                 e.target.style.opacity = '0.7';
-                
               }
             }}
             onMouseLeave={(e) => {
@@ -114,7 +113,7 @@ const HomeContent = ({ activeSection, onSectionChange }) => {
               <span style={styles.arrowIcon}></span>
             )}
           </button>
-          <p style={styles.contextText}>{context.text}</p>
+          <p style={styles.contextText} data-context-text>{context.text}</p>
         </div>
       </div>
     </div>
@@ -127,7 +126,7 @@ const styles = {
     margin: '0 auto',
     padding: `${theme.spacing['3xl']} ${theme.spacing['4xl']} ${theme.spacing.xl}`,
     position: 'relative',
-    minHeight: '100vh',
+    minHeight: '60vh',
     background: theme.colors.background,
   },
   threeColumnLayout: {
@@ -135,14 +134,14 @@ const styles = {
     gridTemplateColumns: `minmax(0, 1fr) ${theme.layout.centerColumnWidth} minmax(0, 1fr)`,
     gap: theme.spacing['5xl'],
     alignItems: 'start',
-    minHeight: '70vh',
+    minHeight: '100vh',
   },
   leftColumn: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'stretch',
-    minHeight: '70vh',
+    minHeight: '90vh',
   },
   leftCenterGroup: {
     display: 'flex',
@@ -182,7 +181,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: '70vh',
+    minHeight: '80vh',
     position: 'sticky',
     top: '10vh',
     width: theme.layout.centerColumnWidth,
@@ -192,8 +191,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'stretch',
-    minHeight: '100vh',
+    alignItems: 'bottom',
+    minHeight: '110vh',
   },
   subtitle: {
     fontFamily: '"Inter", sans-serif',

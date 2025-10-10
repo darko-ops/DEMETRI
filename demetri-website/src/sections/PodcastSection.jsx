@@ -8,9 +8,9 @@ const PodcastSection = () => {
   const { episodes, loading, error } = useEpisodes();
 
   return (
-    <div style={styles.podcastSection}>
-      <h1 style={styles.title}>Episodes</h1>
-      <p style={styles.subtitle}>
+    <div style={styles.podcastSection} data-section-container>
+      <h1 style={styles.title} data-section-title>Episodes</h1>
+      <p style={styles.subtitle} data-section-subtitle>
         Exploring intelligence, design, and human progress through conversation
       </p>
       

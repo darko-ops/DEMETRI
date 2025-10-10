@@ -7,15 +7,25 @@ const Hero = () => {
     <div style={styles.hero}>
       <div style={styles.heroContent}>
         <p style={styles.subheadline}>INTELLIGENCE : RESEARCH</p>
-        <h1 style={styles.siteTitle}>
-          DEMETRI<span style={{ color: theme.colors.primary }}>.XYZ</span>
+        
+        {/* Centered Photo */}
+        <div style={styles.photoContainer}>
+          <img 
+            src="/hero.jpg" 
+            alt="Demetri" 
+            style={styles.photo}
+            className="hero-photo"
+          />
+        </div>
+        
+        <h1 style={styles.siteTitle} data-hero-title>
+          DEMETRI<span style={{ color: 'white' }}>.XYZ</span>
         </h1>
-        <h2 style={styles.headline}>
-          INNOVATING NEWS<br />
-          FOR THE COMING<br />
-          WORLD
+        <h2 style={styles.headline} data-hero-headline>
+          EXPLORATION  <br />
+          THROUGH INTUITION<br />
         </h2>
-        <p style={styles.tagline}>A CIRCULAR RUINS CREATION</p>
+        <p style={styles.tagline} data-hero-tagline>A CIRCULAR RUINS CREATION</p>
       </div>
     </div>
   );
@@ -49,18 +59,32 @@ const styles = {
     transform: 'translateX(-50%)',
     margin: 0,
   },
+  photoContainer: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 0,
+  },
+  photo: {
+    width: '350px',
+    height: '500px',
+    objectFit: 'cover',
+  },
   siteTitle: {
     fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.sizes['4xl'],
+    fontSize: theme.typography.sizes['6xl'],
     fontWeight: theme.typography.weights.bold,
-    letterSpacing: '-0.03em',
-    color: theme.colors.secondary,
+    letterSpacing: '-0.09em',
+    color: 'white',
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     margin: 0,
     whiteSpace: 'nowrap',
+    zIndex: 0,
+
   },
   headline: {
     fontFamily: theme.typography.fontFamily,
@@ -68,7 +92,7 @@ const styles = {
     fontWeight: theme.typography.weights.bold,
     letterSpacing: '0.05em',
     lineHeight: 1.4,
-    color: theme.colors.primary,
+    color: '#545454',
     position: 'absolute',
     bottom: '50px',
     left: '60px',

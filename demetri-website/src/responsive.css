@@ -1,0 +1,191 @@
+/* src/responsive.css */
+
+/* Mobile and Tablet Responsive Styles */
+
+/* Hero Section Mobile */
+@media (max-width: 768px) {
+    [data-hero-title] {
+      font-size: 80px !important;
+      white-space: normal !important;
+      text-align: center;
+      padding: 0 20px;
+    }
+    
+    [data-hero-headline] {
+      font-size: 14px !important;
+      left: 20px !important;
+      bottom: 80px !important;
+    }
+    
+    [data-hero-tagline] {
+      right: 20px !important;
+      font-size: 10px !important;
+      bottom: 20px !important;
+    }
+    
+    /* Hero photo mobile */
+    .hero-photo {
+      width: 350px !important;
+      height: 500px !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    [data-hero-title] {
+      font-size: 60px !important;
+    }
+    
+    /* Hero photo small mobile */
+    .hero-photo {
+      width: 349px !important;
+      height: 500px !important;
+    }
+  }
+  
+  /* Home Section Mobile - Stack in 3 rows */
+  @media (max-width: 1024px) {
+    [data-home-section] {
+      padding: 32px 20px 24px !important;
+    }
+    
+    [data-three-column] {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 32px !important;
+      min-height: auto !important;
+    }
+    
+    /* Row 1: Logo, Page Name, Quote */
+    [data-left-column] {
+      min-height: auto !important;
+      order: 1;
+      align-items: center !important;
+    }
+    
+    [data-page-name] {
+      text-align: center !important;
+      align-self: center !important;
+    }
+    
+    [data-quote-wrapper] {
+      display: block !important;
+      text-align: center !important;
+      margin-top: 24px !important;
+    }
+    
+    /* Row 2: Navigation */
+    [data-center-column] {
+      position: static !important;
+      width: 100% !important;
+      min-height: auto !important;
+      order: 2;
+      margin-top: 0 !important;
+    }
+    
+    /* Row 3: Context */
+    [data-right-column] {
+      min-height: auto !important;
+      order: 3;
+      margin-top: 0 !important;
+    }
+    
+    [data-subtitle-button] {
+      text-align: center !important;
+      font-size: 14px !important;
+    }
+    
+    [data-context-text] {
+      text-align: center !important;
+      font-size: 14px !important;
+      max-width: 100% !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    [data-page-name] {
+      font-size: 60px !important;
+    }
+  }
+  
+  /* Blog Grid Mobile - 1 per row */
+  @media (max-width: 768px) {
+    [data-blog-grid] {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  /* Projects Grid Mobile - 1 per row */
+  @media (max-width: 768px) {
+    [data-projects-grid] {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+  }
+  
+  /* Contact Grid Mobile - 1 per row */
+  @media (max-width: 768px) {
+    [data-contact-grid] {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+  }
+  
+  /* Podcast Recent Grid Mobile - 1 per row */
+  @media (max-width: 768px) {
+    [data-recent-grid] {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+  }
+  
+  /* Section Titles Mobile */
+  @media (max-width: 768px) {
+    [data-section-title] {
+      font-size: 60px !important;
+    }
+    
+    [data-section-subtitle] {
+      font-size: 14px !important;
+      padding: 0 20px;
+    }
+  }
+  
+  /* General padding adjustments for mobile */
+  @media (max-width: 768px) {
+    [data-section-container] {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+  }
+  
+  /* Navigation buttons mobile - full width */
+  @media (max-width: 768px) {
+    nav[aria-label="Main navigation"] {
+      width: 100% !important;
+    }
+    
+    nav[aria-label="Main navigation"] button {
+      width: 100% !important;
+    }
+  }
+  
+  /* Quote block mobile - center text */
+  @media (max-width: 1024px) {
+    [data-quote-wrapper] {
+      text-align: center !important;
+    }
+    
+    [data-quote-wrapper] p {
+      text-align: center !important;
+      white-space: normal !important;
+    }
+    
+    [data-quote-wrapper] span {
+      text-align: center !important;
+      display: block !important;
+    }
+  }
