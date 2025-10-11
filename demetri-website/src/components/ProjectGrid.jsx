@@ -5,7 +5,7 @@ import { theme } from '../styles/theme';
 
 const ProjectGrid = () => {
   return (
-    <div style={styles.gridContainer}>
+    <div style={styles.gridContainer} data-projects-grid>
       {PROJECTS.map((project) => (
         <a 
           key={project.name}
@@ -15,14 +15,26 @@ const ProjectGrid = () => {
           style={styles.projectCard}
         >
           <div style={styles.previewContainer}>
-            <iframe 
-              src={project.url}
-              style={styles.preview}
-              title={`${project.name} preview`}
-              scrolling="no"
-              sandbox="allow-same-origin"
-            />
-            <div style={styles.overlay} />
+            {project.image ? (
+              // Use static image if provided
+              <img 
+                src={project.image}
+                alt={`${project.name} preview`}
+                style={styles.image}
+              />
+            ) : (
+              // Fall back to iframe preview
+              <>
+                <iframe 
+                  src={project.url}
+                  style={styles.preview}
+                  title={`${project.name} preview`}
+                  scrolling="no"
+                  sandbox="allow-same-origin"
+                />
+                <div style={styles.overlay} />
+              </>
+            )}
           </div>
           <div style={styles.projectInfo}>
             <h3 style={styles.projectName}>{project.name}</h3>
@@ -60,6 +72,11 @@ const styles = {
     height: '240px',
     overflow: 'hidden',
     background: theme.colors.background,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
   },
   preview: {
     width: '100%',

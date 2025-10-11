@@ -5,8 +5,8 @@ import { theme } from '../styles/theme';
 
 const ProjectsSection = () => {
   return (
-    <div style={styles.projectsSection}>
-      <h1 style={styles.title}>Works</h1>
+    <div style={styles.projectsSection} data-section-container>
+      <h1 style={styles.title} data-section-title>Works</h1>
       <ProjectGrid />
     </div>
   );

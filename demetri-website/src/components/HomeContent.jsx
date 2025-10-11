@@ -69,10 +69,14 @@ const HomeContent = ({ activeSection, onSectionChange }) => {
               DEMETRI<span style={{ color: theme.colors.primary }}>.XYZ</span>
             </h3>
             
-            <h2 style={{
-              ...styles.pageName,
-              letterSpacing: getTightTracking(titleText),
-            }} data-page-name>
+            <h2
+              className="page-name-heading"
+              style={{
+                ...styles.pageName,
+                letterSpacing: getTightTracking(titleText),
+              }}
+              data-page-name
+            >
               {titleText}
             </h2>
           </div>
@@ -157,8 +161,6 @@ const styles = {
     margin: 0,
     lineHeight: 1,
     whiteSpace: 'nowrap',
-    textAlign: 'left',
-    alignSelf: 'flex-start',
   },
   leftWebsiteName: {
     fontFamily: theme.typography.fontFamily,
@@ -172,9 +174,10 @@ const styles = {
     marginRight: 'auto',
   },
   quoteWrapper: {
-    alignSelf: 'flex-start',
     width: '100%',
     marginTop: theme.spacing['1xl'],
+    display: 'flex',
+    justifyContent: 'center',
   },
   centerColumn: {
     display: 'flex',

@@ -69,7 +69,8 @@ export const CAROUSEL_CONFIG = {
     {
       name: "THE 86ED",
       description: "Minimalist clothing line",
-      url: "https://the86ed.net"
+      url: "https://the86ed.net",
+      image: "/project-86ed.jpg"
     }
 
   ];
