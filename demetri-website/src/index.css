@@ -25,11 +25,24 @@ button:focus,
 button:active,
 button:hover,
 button:focus-visible {
-  outline: none !important;
+  outline: none !import ant;
   box-shadow: none !important;
 }
 
 button::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+.page-name-heading {
+  text-align: left;
+  align-self: flex-start;
+}
+
+.quote-block {
+  text-align: left;
+}
+
+.quote-block__text {
+  white-space: pre;
 }

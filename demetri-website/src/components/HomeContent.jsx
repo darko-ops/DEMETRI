@@ -65,14 +65,18 @@ const HomeContent = ({ activeSection, onSectionChange }) => {
         {/* Left Column */}
         <div style={styles.leftColumn} data-left-column>
           <div style={styles.leftCenterGroup}>
-            <h3 style={styles.leftWebsiteName}>
+            <h3 style={styles.leftWebsiteName} data-left-website-name>
               DEMETRI<span style={{ color: theme.colors.primary }}>.XYZ</span>
             </h3>
             
-            <h2 style={{
-              ...styles.pageName,
-              letterSpacing: getTightTracking(titleText),
-            }} data-page-name>
+            <h2
+              className="page-name-heading"
+              style={{
+                ...styles.pageName,
+                letterSpacing: getTightTracking(titleText),
+              }}
+              data-page-name
+            >
               {titleText}
             </h2>
           </div>
