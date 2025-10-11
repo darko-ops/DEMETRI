@@ -4,9 +4,9 @@ import { theme } from '../styles/theme';
 
 const QuoteBlock = React.memo(({ text, author }) => {
   return (
-    <div style={styles.container}>
-      <p style={styles.quote}>{text}</p>
-      <span style={styles.author}>— {author}</span>
+    <div className="quote-block" style={styles.container}>
+      <p className="quote-block__text" style={styles.quote}>{text}</p>
+      <span className="quote-block__author" style={styles.author}>— {author}</span>
     </div>
   );
 });
@@ -27,8 +27,7 @@ const styles = {
     lineHeight: 1,
     color: theme.colors.secondary,
     margin: 0,
-    whiteSpace: 'pre',
-  },
+    },
   author: {
     fontSize: theme.typography.sizes.base,
     fontWeight: theme.typography.weights.bold,
