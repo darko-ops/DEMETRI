@@ -116,6 +116,7 @@ export const BLOG_POSTS = [
         id: 4,
         title: "Mass Drift Theory",
         date: "May 2025",
+        slug: "mass-drift-theory",
         url: "/papers/Mass Drift Theory- A Macrodynamic Framework for Systemic Shifts in Collective Opinion.pdf"
     },
 
