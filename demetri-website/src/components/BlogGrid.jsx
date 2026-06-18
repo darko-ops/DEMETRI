@@ -6,12 +6,15 @@ import { theme } from '../styles/theme';
 const BlogGrid = () => {
   return (
     <div style={styles.gridContainer}>
-      {BLOG_POSTS.map((post) => (
-        <a 
+      {BLOG_POSTS.map((post) => {
+        const hasPage = Boolean(post.slug);
+        const href = hasPage ? `/blog/${post.slug}/` : post.url;
+        return (
+        <a
           key={post.id}
-          href={post.url} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+          href={href}
+          target={hasPage ? undefined : '_blank'}
+          rel={hasPage ? undefined : 'noopener noreferrer'}
           style={styles.gridItem}
         >
           <div style={styles.sheet}>
@@ -25,7 +28,8 @@ const BlogGrid = () => {
           <h3 style={styles.postTitle}>{post.title}</h3>
           <p style={styles.postDate}>{post.date}</p>
         </a>
-      ))}
+        );
+      })}
     </div>
   );
 };

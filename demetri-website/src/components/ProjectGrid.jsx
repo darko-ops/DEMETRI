@@ -6,42 +6,58 @@ import { theme } from '../styles/theme';
 const ProjectGrid = () => {
   return (
     <div style={styles.gridContainer} data-projects-grid>
-      {PROJECTS.map((project) => (
-        <a 
-          key={project.name}
-          href={project.url} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          style={styles.projectCard}
-        >
-          <div style={styles.previewContainer}>
-            {project.image ? (
-              // Use static image if provided
-              <img 
-                src={project.image}
-                alt={`${project.name} preview`}
-                style={styles.image}
-              />
-            ) : (
-              // Fall back to iframe preview
-              <>
-                <iframe 
-                  src={project.url}
-                  style={styles.preview}
-                  title={`${project.name} preview`}
-                  scrolling="no"
-                  sandbox="allow-same-origin"
+      {PROJECTS.map((project) => {
+        const hasLink = project.url && project.url !== '#';
+        const isPlaceholder = !project.logo && !project.image;
+        const CardTag = hasLink ? 'a' : 'div';
+        const cardProps = hasLink
+          ? { href: project.url, target: '_blank', rel: 'noopener noreferrer' }
+          : {};
+        return (
+          <CardTag
+            key={project.name}
+            {...cardProps}
+            style={{ ...styles.projectCard, ...(hasLink ? {} : styles.projectCardStatic) }}
+          >
+            <div style={{ ...styles.previewContainer, ...(project.bg ? { background: project.bg } : {}) }}>
+              {project.logo ? (
+                // Logo centered on a solid background
+                <img
+                  src={project.logo}
+                  alt={`${project.name} logo`}
+                  style={styles.logo}
                 />
-                <div style={styles.overlay} />
-              </>
-            )}
-          </div>
-          <div style={styles.projectInfo}>
-            <h3 style={styles.projectName}>{project.name}</h3>
-            <p style={styles.projectDescription}>{project.description}</p>
-          </div>
-        </a>
-      ))}
+              ) : project.image ? (
+                // Use static image if provided
+                <img
+                  src={project.image}
+                  alt={`${project.name} preview`}
+                  style={styles.image}
+                />
+              ) : isPlaceholder ? (
+                // Coming-soon placeholder: centered wordmark on a solid background
+                <div style={{ ...styles.placeholderText, ...(project.textColor ? { color: project.textColor } : {}) }}>{project.name}</div>
+              ) : (
+                // Fall back to iframe preview
+                <>
+                  <iframe
+                    src={project.url}
+                    style={styles.preview}
+                    title={`${project.name} preview`}
+                    scrolling="no"
+                    sandbox="allow-same-origin"
+                  />
+                  <div style={styles.overlay} />
+                </>
+              )}
+            </div>
+            <div style={styles.projectInfo}>
+              <h3 style={styles.projectName}>{project.name}</h3>
+              <p style={styles.projectDescription}>{project.description}</p>
+            </div>
+          </CardTag>
+        );
+      })}
     </div>
   );
 };
@@ -66,6 +82,9 @@ const styles = {
     cursor: 'pointer',
     boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
   },
+  projectCardStatic: {
+    cursor: 'default',
+  },
   previewContainer: {
     position: 'relative',
     width: '100%',
@@ -73,10 +92,32 @@ const styles = {
     overflow: 'hidden',
     background: theme.colors.background,
   },
+  placeholderText: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: theme.typography.fontFamily,
+    fontSize: '1.75rem',
+    fontWeight: theme.typography.weights.bold,
+    letterSpacing: '0.18em',
+    color: '#ffffff',
+  },
   image: {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
+  },
+  logo: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
+    padding: '48px',
+    boxSizing: 'border-box',
   },
   preview: {
     width: '100%',

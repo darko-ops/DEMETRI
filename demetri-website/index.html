@@ -2,12 +2,162 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Demetri</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Primary Meta Tags -->
+    <title>Demetri Hodges — Builder, Researcher, Technologist</title>
+    <meta name="title" content="Demetri Hodges — Builder, Researcher, Technologist" />
+    <meta name="description" content="Demetri Hodges is a builder, researcher, and technologist exploring the intersection of intelligence, software, and human systems." />
+    <meta name="author" content="Demetri Hodges" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://demetri.xyz/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://demetri.xyz/" />
+    <meta property="og:site_name" content="Demetri Hodges" />
+    <meta property="og:title" content="Demetri Hodges — Builder, Researcher, Technologist" />
+    <meta property="og:description" content="Demetri Hodges is a builder, researcher, and technologist exploring the intersection of intelligence, software, and human systems." />
+    <meta property="og:image" content="https://demetri.xyz/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Demetri Hodges — Builder, Researcher, Technologist" />
+    <meta name="twitter:description" content="Demetri Hodges is a builder, researcher, and technologist exploring the intersection of intelligence, software, and human systems." />
+    <meta name="twitter:image" content="https://demetri.xyz/og-image.jpg" />
+
+    <!-- Structured Data: Person + Products -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://demetri.xyz/#person",
+          "name": "Demetri Hodges",
+          "url": "https://demetri.xyz/",
+          "image": "https://demetri.xyz/og-image.jpg",
+          "jobTitle": "Builder, Researcher, Technologist",
+          "description": "Demetri Hodges is a builder, researcher, and technologist exploring the intersection of intelligence, software, and human systems. Driven by curiosity and a bias toward building, Demetri spends his time creating products, conducting research, and experimenting with new forms of intelligence—from software agents and AI infrastructure to economic systems and human-computer interaction. He is drawn to simple, intuitive design and the belief that sophistication is best expressed through clarity.",
+          "sameAs": [
+            "https://www.linkedin.com/in/demetri-hodges-418534195/",
+            "https://github.com/darko-ops",
+            "https://x.com/demetrixyz",
+            "https://substack.com/@demetrixyz",
+            "https://obius.io",
+            "https://thebouncr.com",
+            "https://rrsrch.com"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Obius",
+          "url": "https://obius.io",
+          "applicationCategory": "ProductivityApplication",
+          "operatingSystem": "iOS",
+          "slogan": "Architect your thoughts.",
+          "description": "Node-based thinking and notes app with structure-aware AI, live reusable concepts, immutable versioning, and on-device storage. macOS coming soon.",
+          "creator": { "@id": "https://demetri.xyz/#person" },
+          "offers": [
+            { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+            {
+              "@type": "Offer",
+              "name": "Pro",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "9.99",
+                "priceCurrency": "USD",
+                "billingIncrement": 1,
+                "unitText": "MONTH"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Bouncr",
+          "url": "https://thebouncr.com",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "slogan": "Your paywall should haggle.",
+          "description": "Drop-in AI pricing-negotiation layer for subscription apps; a deterministic policy engine sets every price so the LLM can't be talked below your floor. Stripe settlement, MCP-native.",
+          "creator": { "@id": "https://demetri.xyz/#person" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Dromo",
+          "url": "https://www.dromo.fit",
+          "applicationCategory": "MusicApplication",
+          "operatingSystem": "iOS",
+          "slogan": "Run to the beat. Hit your pace.",
+          "description": "Pace-adaptive running music for iOS (coming soon) that locks your library's tempo to your cadence; on-device analysis, BPM-only data leaves the phone.",
+          "creator": { "@id": "https://demetri.xyz/#person" }
+        },
+        {
+          "@type": "Organization",
+          "name": "RRSRCH",
+          "url": "https://rrsrch.com",
+          "description": "Independent research lab.",
+          "founder": { "@id": "https://demetri.xyz/#person" }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Crawlable fallback for non-JS agents, crawlers, and link-preview bots -->
+    <noscript>
+      <h1>Demetri Hodges</h1>
+      <p>Builder, Researcher, Technologist</p>
+      <p>Demetri Hodges is a builder, researcher, and technologist exploring the intersection of intelligence, software, and human systems.</p>
+      <p>Driven by curiosity and a bias toward building, Demetri spends his time creating products, conducting research, and experimenting with new forms of intelligence—from software agents and AI infrastructure to economic systems and human-computer interaction.</p>
+      <p>He is drawn to simple, intuitive design and the belief that sophistication is best expressed through clarity. Build relentlessly. Learn continuously. Follow ideas wherever they lead.</p>
+
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="https://obius.io">Obius</a> — "Architect your thoughts." Node-based thinking and notes app with structure-aware AI, live reusable concepts, immutable versioning, and on-device storage. iOS (macOS coming soon).</li>
+        <li><a href="https://thebouncr.com">Bouncr</a> — "Your paywall should haggle." Drop-in AI pricing-negotiation layer for subscription apps; a deterministic policy engine sets every price so the LLM can't be talked below your floor. Stripe settlement, MCP-native.</li>
+        <li><a href="https://www.dromo.fit">Dromo</a> — "Run to the beat. Hit your pace." Pace-adaptive running music for iOS (coming soon) that locks your library's tempo to your cadence; on-device analysis, BPM-only data leaves the phone.</li>
+        <li><a href="https://rrsrch.com">RRSRCH</a> — independent research lab.</li>
+      </ul>
+
+      <h2>Writing</h2>
+      <ul>
+        <li><a href="https://demetri.xyz/papers/the-doldrums.pdf">The Doldrums</a> — June 2026.</li>
+        <li><a href="https://demetri.xyz/papers/Mass%20Drift%20Theory-%20A%20Macrodynamic%20Framework%20for%20Systemic%20Shifts%20in%20Collective%20Opinion.pdf">Mass Drift Theory</a> — May 2025.</li>
+      </ul>
+
+      <h2>Experience</h2>
+      <ul>
+        <li><strong>Coalfire</strong> (Remote) — Consultant (March 2026 – Present); Associate (July 2023 – March 2026). Cybersecurity consulting across 50+ projects: assessments, audits, reporting, and automation tooling.</li>
+        <li><strong>HFE CS</strong> (Winston Salem, NC) — Project Intern (July 2021 – August 2022).</li>
+        <li><strong>Archer Advanced Rubber Components</strong> (Winston Salem, NC) — Project Intern (June 2021 – August 2021).</li>
+        <li><strong>Winston Starts</strong> (Winston Salem, NC) — Intern (June 2018 – July 2018).</li>
+        <li><strong>Wake Forest Institute of Regenerative Medicine (WFIRM)</strong> (Winston Salem, NC) — Project Intern (June 2017 – August 2017).</li>
+      </ul>
+
+      <h2>Education</h2>
+      <ul>
+        <li>Virginia Polytechnic Institute and State University, Pamplin College of Business — B.S. in Business Information Technology, Cybersecurity Management and Analytics (CMA), 2023.</li>
+        <li>Amazon Web Services — AWS Certified Cloud Practitioner, issued February 2024.</li>
+      </ul>
+
+      <h2>Connect</h2>
+      <ul>
+        <li><a href="mailto:demetri@rrsrch.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/demetri-hodges-418534195/">LinkedIn</a></li>
+        <li><a href="https://x.com/demetrixyz">X (@demetrixyz)</a></li>
+        <li><a href="https://substack.com/@demetrixyz">Substack (@demetrixyz)</a></li>
+        <li><a href="https://github.com/darko-ops">GitHub</a></li>
+      </ul>
+    </noscript>
   </body>
 </html>

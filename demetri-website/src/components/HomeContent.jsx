@@ -220,6 +220,7 @@ const styles = {
     maxWidth: '600px',
     hyphens: 'none',
     wordSpacing: 'normal',
+    whiteSpace: 'pre-line',
   },
 };
 

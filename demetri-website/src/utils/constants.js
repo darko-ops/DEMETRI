@@ -30,10 +30,10 @@ export const CAROUSEL_CONFIG = {
   
   export const SECTION_CONTENT = {
     podcast: {
-      title: "PODCAST",
-      label: "LISTEN",
-      subtitle: "[LISTEN]",
-      description: "Demetri.xyz is an ongoing series exploring intelligence, design, and human progress. Each episode examines how ideas evolve—across technology, creativity, and systems that shape modern life. The podcast blends research, reflection, and conversation, connecting patterns between disciplines to uncover how thought becomes form.",
+      title: "ABOUT",
+      label: "DISCOVER",
+      subtitle: "[DISCOVER]",
+      description: "A record of the experiences, projects, and ideas that have shaped my perspective.\n\nMy interests span intelligence, technology, design, and human systems. Through building, research, and experimentation, I explore how ideas evolve into products, organizations, and technologies that shape the world around us.\n\nThis page provides the context behind that work.",
     },
     blog: {
       title: "BLOG",
@@ -57,20 +57,25 @@ export const CAROUSEL_CONFIG = {
   
   export const PROJECTS = [
     {
-      name: "RRSRCH",
-      description: "Independent research lab",
-      url: "https://rrsrch.com"
-    },
-    {
         name: "OBIUS",
-        description: "Coming soon",
-        url: "https://obius.io"
+        description: "Download Now",
+        url: "https://obius.io",
+        logo: "/obius-logo.png",
+        bg: "#2b2b2b"
       },
     {
-      name: "THE 86ED",
-      description: "Minimalist clothing line",
-      url: "https://the86ed.net",
-      image: "/project-86ed.jpg"
+      name: "BOUNCR",
+      description: "Try out the demo",
+      url: "https://thebouncr.com",
+      logo: "/bouncr-logo.png",
+      bg: "#ffffff"
+    },
+    {
+      name: "DROMO",
+      description: "Coming Soon",
+      url: "https://www.dromo.fit",
+      bg: "#1a1a1a",
+      textColor: "#22d3ee"
     }
 
   ];
@@ -86,16 +91,33 @@ export const CAROUSEL_CONFIG = {
       value: "Demetri Hodges",
       url: "https://www.linkedin.com/in/demetri-hodges-418534195/"
     },
+    {
+      label: "X",
+      value: "@demetrixyz",
+      url: "https://x.com/demetrixyz"
+    },
+    {
+      label: "SUBSTACK",
+      value: "@demetrixyz",
+      url: "https://substack.com/@demetrixyz"
+    },
   ];
 
   // Blog posts array - add your posts here
 export const BLOG_POSTS = [
+    {
+        id: 5,
+        title: "The Doldrums",
+        date: "June 2026",
+        slug: "the-doldrums",
+        url: "/papers/the-doldrums.pdf"
+    },
     {
         id: 4,
         title: "Mass Drift Theory",
         date: "May 2025",
         url: "/papers/Mass Drift Theory- A Macrodynamic Framework for Systemic Shifts in Collective Opinion.pdf"
     },
-    
+
     // Add more posts as needed dont forget comma
   ];

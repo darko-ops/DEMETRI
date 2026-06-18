@@ -11,8 +11,8 @@ const Hero = () => {
         {/* Centered Photo */}
         <div style={styles.photoContainer}>
           <img 
-            src="/hero.jpg" 
-            alt="Demetri" 
+            src="/hero.jpg"
+            alt="Demetri Hodges"
             style={styles.photo}
             className="hero-photo"
           />
