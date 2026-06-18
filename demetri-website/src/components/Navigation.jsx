@@ -5,7 +5,7 @@ import { theme } from '../styles/theme';
 const Navigation = ({ activeSection, onSectionChange }) => {
   const navItems = [
     { key: 'podcast', label: 'About' },
-    { key: 'blog', label: 'Blog' },
+    { key: 'blog', label: 'Writing' },
     { key: 'projects', label: 'Projects' },
     { key: 'connect', label: 'Connect' },
   ];

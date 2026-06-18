@@ -6,7 +6,7 @@ import { theme } from '../styles/theme';
 const BlogSection = () => {
   return (
     <div style={styles.blogSection}>
-      <h1 style={styles.title}>Notes_</h1>
+      <h1 style={styles.title}>Meditations</h1>
       <BlogGrid />
     </div>
   );
