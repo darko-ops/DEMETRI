@@ -106,6 +106,13 @@ export const CAROUSEL_CONFIG = {
   // Blog posts array - add your posts here
 export const BLOG_POSTS = [
     {
+        id: 6,
+        title: "The Great Forgetting",
+        date: "June 2026",
+        slug: "the-great-forgetting",
+        url: "/papers/the-great-forgetting.pdf"
+    },
+    {
         id: 5,
         title: "The Doldrums",
         date: "June 2026",
