@@ -36,7 +36,7 @@ export const CAROUSEL_CONFIG = {
       description: "A record of the experiences, projects, and ideas that have shaped my perspective.\n\nMy interests span intelligence, technology, design, and human systems. Through building, research, and experimentation, I explore how ideas evolve into products, organizations, and technologies that shape the world around us.\n\nThis page provides the context behind that work.",
     },
     blog: {
-      title: "BLOG",
+      title: "WRITING",
       label: "READ",
       subtitle: "[READ]",
       description: "A space for thoughts across design, systems, culture, and perspective. Each piece follows how ideas connect and how concepts take form over time — exploring thoughts in progress, connections, and moments of clarity.",
