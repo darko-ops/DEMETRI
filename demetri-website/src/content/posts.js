@@ -2,20 +2,11 @@
 // Central registry of writing. Posts with `hasPage: true` get a prerendered
 // HTML page at /blog/<slug>/; PDF-only entries link straight to the PDF.
 import { theDoldrums } from './posts/the-doldrums.js';
+import { massDriftTheory } from './posts/mass-drift-theory.js';
 
 export const POSTS = [
   theDoldrums,
-  {
-    slug: 'mass-drift-theory',
-    title: 'Mass Drift Theory',
-    subtitle: 'A Macrodynamic Framework for Systemic Shifts in Collective Opinion',
-    dateDisplay: 'May 2025',
-    dateISO: '2025-05',
-    description:
-      'A macrodynamic framework for systemic shifts in collective opinion.',
-    pdf: '/papers/Mass Drift Theory- A Macrodynamic Framework for Systemic Shifts in Collective Opinion.pdf',
-    hasPage: false,
-  },
+  massDriftTheory,
 ];
 
 export function getPost(slug) {

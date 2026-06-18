@@ -18,13 +18,59 @@ const BlogPost = ({ post }) => {
         <p style={styles.byline}>{post.byline} · {post.dateDisplay}</p>
 
         <div style={styles.body}>
-          {post.body.map((block, i) =>
-            block.type === 'h2' ? (
-              <h2 key={i} style={styles.h2}>{block.text}</h2>
-            ) : (
-              <p key={i} style={styles.paragraph}>{block.text}</p>
-            )
-          )}
+          {post.body.map((block, i) => {
+            switch (block.type) {
+              case 'h2':
+                return <h2 key={i} style={styles.h2}>{block.text}</h2>;
+              case 'h3':
+                return <h3 key={i} style={styles.h3}>{block.text}</h3>;
+              case 'h4':
+                return <h4 key={i} style={styles.h4}>{block.text}</h4>;
+              case 'ul':
+                return (
+                  <ul key={i} style={styles.ul}>
+                    {block.items.map((item, j) => (
+                      <li key={j} style={styles.li}>{item}</li>
+                    ))}
+                  </ul>
+                );
+              case 'laws':
+                return (
+                  <ol key={i} style={styles.laws}>
+                    {block.items.map((law, j) => (
+                      <li key={j} style={styles.law}>
+                        <span style={styles.lawTerm}>{law.term}.</span> {law.text}
+                      </li>
+                    ))}
+                  </ol>
+                );
+              case 'table':
+                return (
+                  <div key={i} style={styles.tableWrap}>
+                    <table style={styles.table}>
+                      <thead>
+                        <tr>
+                          {block.headers.map((h, j) => (
+                            <th key={j} style={styles.th}>{h}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {block.rows.map((row, r) => (
+                          <tr key={r}>
+                            {row.map((cell, c) => (
+                              <td key={c} style={styles.td}>{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                );
+              default:
+                return <p key={i} style={styles.paragraph}>{block.text}</p>;
+            }
+          })}
         </div>
 
         {post.pdf && (
@@ -119,6 +165,21 @@ const styles = {
     color: theme.colors.heading,
     margin: `${theme.spacing['3xl']} 0 ${theme.spacing.md}`,
   },
+  h3: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.sizes.lg,
+    fontWeight: theme.typography.weights.bold,
+    letterSpacing: '-0.01em',
+    color: theme.colors.heading,
+    margin: `${theme.spacing['2xl']} 0 ${theme.spacing.sm}`,
+  },
+  h4: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.sizes.md,
+    fontWeight: theme.typography.weights.bold,
+    color: theme.colors.secondary,
+    margin: `${theme.spacing.xl} 0 ${theme.spacing.xs}`,
+  },
   paragraph: {
     fontFamily: theme.typography.fontFamily,
     fontSize: '18px',
@@ -126,6 +187,67 @@ const styles = {
     lineHeight: 1.75,
     color: '#3f3f3f',
     margin: `0 0 ${theme.spacing.xl}`,
+  },
+  ul: {
+    margin: `0 0 ${theme.spacing.xl}`,
+    paddingLeft: '1.25em',
+    fontSize: '18px',
+  },
+  li: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: '18px',
+    fontWeight: theme.typography.weights.normal,
+    lineHeight: 1.7,
+    color: '#3f3f3f',
+    marginBottom: theme.spacing.sm,
+  },
+  laws: {
+    margin: `0 0 ${theme.spacing.xl}`,
+    paddingLeft: '1.4em',
+  },
+  law: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: '18px',
+    fontWeight: theme.typography.weights.normal,
+    lineHeight: 1.75,
+    color: '#3f3f3f',
+    marginBottom: theme.spacing.lg,
+  },
+  lawTerm: {
+    fontWeight: theme.typography.weights.bold,
+    color: theme.colors.heading,
+  },
+  tableWrap: {
+    overflowX: 'auto',
+    margin: `${theme.spacing.lg} 0 ${theme.spacing['2xl']}`,
+  },
+  table: {
+    borderCollapse: 'collapse',
+    width: '100%',
+    fontSize: theme.typography.sizes.base,
+  },
+  th: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.sizes.sm,
+    fontWeight: theme.typography.weights.bold,
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em',
+    color: theme.colors.heading,
+    textAlign: 'left',
+    verticalAlign: 'top',
+    padding: theme.spacing.sm,
+    borderBottom: `2px solid ${theme.colors.border}`,
+  },
+  td: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.sizes.base,
+    fontWeight: theme.typography.weights.normal,
+    lineHeight: 1.6,
+    color: '#3f3f3f',
+    textAlign: 'left',
+    verticalAlign: 'top',
+    padding: theme.spacing.sm,
+    borderBottom: `1px solid ${theme.colors.border}`,
   },
   pdfRow: {
     marginTop: theme.spacing['4xl'],
