@@ -54,6 +54,18 @@ const getIcon = (label) => {
           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
         </svg>
       );
+    case 'X':
+      return (
+        <svg viewBox="0 0 24 24" fill={theme.colors.primary} style={{ width: '44px', height: '44px' }}>
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+        </svg>
+      );
+    case 'SUBSTACK':
+      return (
+        <svg viewBox="0 0 24 24" fill={theme.colors.primary} style={{ width: '44px', height: '44px' }}>
+          <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+        </svg>
+      );
     default:
       return null;
   }
@@ -61,13 +73,18 @@ const getIcon = (label) => {
 
 const styles = {
   gridContainer: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
     gap: theme.spacing['2xl'],
+    maxWidth: '760px',
     marginTop: theme.spacing['4xl'],
     marginBottom: theme.spacing['5xl'],
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   contactCard: {
+    flex: '0 1 220px',
     textDecoration: 'none',
     background: theme.colors.white,
     border: `1px solid ${theme.colors.border}`,

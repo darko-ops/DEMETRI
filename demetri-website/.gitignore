@@ -33,3 +33,4 @@ scp -i ~/Downloads/rrsrch-labs.pem -r dist/* ubuntu@54.196.234.50:/var/www/demet
 local
 cd demetri-website
 
+.vercel

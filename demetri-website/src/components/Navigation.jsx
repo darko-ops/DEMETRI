@@ -3,7 +3,12 @@ import React from 'react';
 import { theme } from '../styles/theme';
 
 const Navigation = ({ activeSection, onSectionChange }) => {
-  const navItems = ['podcast', 'blog', 'projects', 'connect'];
+  const navItems = [
+    { key: 'podcast', label: 'About' },
+    { key: 'blog', label: 'Blog' },
+    { key: 'projects', label: 'Projects' },
+    { key: 'connect', label: 'Connect' },
+  ];
 
   const handleClick = (item) => {
     onSectionChange(item);
@@ -11,18 +16,18 @@ const Navigation = ({ activeSection, onSectionChange }) => {
 
   return (
     <nav style={styles.navStack} aria-label="Main navigation">
-      {navItems.map((item) => (
+      {navItems.map(({ key, label }) => (
         <button
-          key={item}
-          onClick={() => handleClick(item)}
+          key={key}
+          onClick={() => handleClick(key)}
           onMouseDown={(e) => e.preventDefault()}
           style={{
             ...styles.navStackItem,
-            ...(activeSection === item ? styles.navStackItemActive : {})
+            ...(activeSection === key ? styles.navStackItemActive : {})
           }}
-          aria-current={activeSection === item ? 'page' : undefined}
+          aria-current={activeSection === key ? 'page' : undefined}
         >
-          {item.toUpperCase()}
+          {label.toUpperCase()}
         </button>
       ))}
     </nav>

@@ -38,14 +38,27 @@ function App() {
         onSectionChange={showSection}
       />
 
-      {/* Dynamic Section Content */}
-      {activeSection === 'podcast' && <PodcastSection />}
-      {activeSection === 'blog' && <BlogSection />}
-      {activeSection === 'projects' && <ProjectsSection />}
-      {activeSection === 'connect' && <ConnectSection />}
+      {/* Dynamic Section Content — always mounted so all content is present in
+          the prerendered/static HTML; the nav toggles visibility, not mounting. */}
+      <div style={{ display: activeSection === 'podcast' ? 'block' : 'none' }}>
+        <PodcastSection />
+      </div>
+      <div style={{ display: activeSection === 'blog' ? 'block' : 'none' }}>
+        <BlogSection />
+      </div>
+      <div style={{ display: activeSection === 'projects' ? 'block' : 'none' }}>
+        <ProjectsSection />
+      </div>
+      <div style={{ display: activeSection === 'connect' ? 'block' : 'none' }}>
+        <ConnectSection />
+      </div>
 
       {/* Footer */}
       <footer style={styles.footer}>
+        <a href="/about/" style={styles.footerLink}>About</a>
+        <span style={styles.footerSep}>·</span>
+        <a href="/projects/" style={styles.footerLink}>Projects</a>
+        <span style={styles.footerSep}>·</span>
         © {new Date().getFullYear()} Demetri. All rights reserved.
       </footer>
     </div>
@@ -72,6 +85,14 @@ const styles = {
     color: theme.colors.lightGray,
     background: theme.colors.white,
     borderTop: `1px solid ${theme.colors.border}`,
+  },
+  footerLink: {
+    color: theme.colors.lightGray,
+    textDecoration: 'none',
+  },
+  footerSep: {
+    margin: `0 ${theme.spacing.sm}`,
+    color: theme.colors.lightGray,
   },
 };
 

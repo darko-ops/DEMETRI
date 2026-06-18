@@ -1,15 +1,15 @@
 import { StrictMode } from 'react'
-import { hydrateRoot } from 'react-dom/client'
-import './index.css'
-import './responsive.css'  // Add this line
+import { renderToString } from 'react-dom/server'
 import App from './App.jsx'
 import AboutPage from './components/AboutPage.jsx'
 import ProjectsPage from './components/ProjectsPage.jsx'
 import BlogIndexPage from './components/BlogIndexPage.jsx'
 import BlogPost from './components/BlogPost.jsx'
-import { getPost } from './content/posts.js'
+import { POSTS, getPost } from './content/posts.js'
 
-function elementForPath(pathname) {
+export { POSTS }
+
+function elementFor(pathname) {
   if (pathname === '/about' || pathname === '/about/') {
     return <AboutPage />
   }
@@ -27,9 +27,11 @@ function elementForPath(pathname) {
   return <App />
 }
 
-hydrateRoot(
-  document.getElementById('root'),
-  <StrictMode>
-    {elementForPath(window.location.pathname)}
-  </StrictMode>,
-)
+// Rendered at build time by prerender.js and injected into static HTML.
+export function render(pathname = '/') {
+  return renderToString(
+    <StrictMode>
+      {elementFor(pathname)}
+    </StrictMode>,
+  )
+}

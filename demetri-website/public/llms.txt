@@ -1,0 +1,27 @@
+# Demetri Hodges
+
+> Demetri Hodges is a builder, researcher, and technologist exploring the intersection of intelligence, software, and human systems.
+
+Driven by curiosity and a bias toward building, Demetri spends his time creating products, conducting research, and experimenting with new forms of intelligence—from software agents and AI infrastructure to economic systems and human-computer interaction. He is drawn to simple, intuitive design and the belief that sophistication is best expressed through clarity.
+
+Personal site: https://demetri.xyz/
+
+## Projects
+
+- [Obius](https://obius.io): "Architect your thoughts." Node-based thinking and notes app with structure-aware AI, live reusable concepts, immutable versioning, and on-device storage. iOS, with macOS coming soon. Free tier; Pro at $9.99/mo.
+- [Bouncr](https://thebouncr.com): "Your paywall should haggle." Drop-in AI pricing-negotiation layer for subscription apps; a deterministic policy engine sets every price so the LLM can't be talked below your floor. Stripe settlement, MCP-native.
+- [Dromo](https://www.dromo.fit): "Run to the beat. Hit your pace." Pace-adaptive running music for iOS (coming soon) that locks your library's tempo to your cadence; on-device analysis, BPM-only data leaves the phone.
+- [RRSRCH](https://rrsrch.com): Independent research lab founded by Demetri Hodges.
+
+## Writing
+
+- [The Doldrums](https://demetri.xyz/papers/the-doldrums.pdf): On consciousness, cognition, and human succession (June 2026).
+- [Mass Drift Theory](https://demetri.xyz/papers/Mass%20Drift%20Theory-%20A%20Macrodynamic%20Framework%20for%20Systemic%20Shifts%20in%20Collective%20Opinion.pdf): A macrodynamic framework for systemic shifts in collective opinion (May 2025).
+
+## Connect
+
+- [Email](mailto:demetri@rrsrch.com)
+- [LinkedIn](https://www.linkedin.com/in/demetri-hodges-418534195/)
+- [X](https://x.com/demetrixyz): @demetrixyz
+- [Substack](https://substack.com/@demetrixyz): @demetrixyz
+- [GitHub](https://github.com/darko-ops)
