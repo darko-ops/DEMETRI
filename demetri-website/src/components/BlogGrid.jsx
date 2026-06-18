@@ -5,7 +5,7 @@ import { theme } from '../styles/theme';
 
 const BlogGrid = () => {
   return (
-    <div style={styles.gridContainer}>
+    <div style={styles.gridContainer} data-blog-grid>
       {BLOG_POSTS.map((post) => {
         const hasPage = Boolean(post.slug);
         const href = hasPage ? `/blog/${post.slug}/` : post.url;

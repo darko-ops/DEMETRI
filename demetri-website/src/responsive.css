@@ -245,7 +245,21 @@
       text-align: center !important;
     }
   }
-  
+
+  /* Observations heading is a longer word than the other section titles,
+     so step it down further to keep it on-screen on narrow phones. */
+  @media (max-width: 768px) {
+    [data-blog-title] {
+      font-size: 48px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    [data-blog-title] {
+      font-size: 38px !important;
+    }
+  }
+
   /* General padding adjustments for mobile */
   @media (max-width: 768px) {
     [data-section-container] {

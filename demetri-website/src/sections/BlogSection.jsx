@@ -5,8 +5,8 @@ import { theme } from '../styles/theme';
 
 const BlogSection = () => {
   return (
-    <div style={styles.blogSection}>
-      <h1 style={styles.title}>Observations</h1>
+    <div style={styles.blogSection} data-section-container>
+      <h1 style={styles.title} data-section-title data-blog-title>Observations</h1>
       <BlogGrid />
     </div>
   );
