@@ -26,6 +26,8 @@ const BlogPost = ({ post }) => {
                 return <h3 key={i} style={styles.h3}>{block.text}</h3>;
               case 'h4':
                 return <h4 key={i} style={styles.h4}>{block.text}</h4>;
+              case 'quote':
+                return <blockquote key={i} style={styles.quote}>{block.text}</blockquote>;
               case 'ul':
                 return (
                   <ul key={i} style={styles.ul}>
@@ -187,6 +189,16 @@ const styles = {
     lineHeight: 1.75,
     color: '#3f3f3f',
     margin: `0 0 ${theme.spacing.xl}`,
+  },
+  quote: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.sizes.lg,
+    fontStyle: 'italic',
+    lineHeight: 1.6,
+    color: theme.colors.secondary,
+    borderLeft: `3px solid ${theme.colors.border}`,
+    margin: `${theme.spacing['2xl']} 0`,
+    padding: `${theme.spacing.xs} 0 ${theme.spacing.xs} ${theme.spacing.xl}`,
   },
   ul: {
     margin: `0 0 ${theme.spacing.xl}`,

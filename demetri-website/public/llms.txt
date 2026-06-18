@@ -15,6 +15,7 @@ Personal site: https://demetri.xyz/
 
 ## Writing
 
+- [The Great Forgetting](https://demetri.xyz/papers/the-great-forgetting.pdf): On knowledge, wisdom, and the cost of infinite access (June 2026).
 - [The Doldrums](https://demetri.xyz/papers/the-doldrums.pdf): On consciousness, cognition, and human succession (June 2026).
 - [Mass Drift Theory](https://demetri.xyz/papers/Mass%20Drift%20Theory-%20A%20Macrodynamic%20Framework%20for%20Systemic%20Shifts%20in%20Collective%20Opinion.pdf): A macrodynamic framework for systemic shifts in collective opinion (May 2025).
 

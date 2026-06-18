@@ -1,10 +1,12 @@
 // src/content/posts.js
 // Central registry of writing. Posts with `hasPage: true` get a prerendered
 // HTML page at /blog/<slug>/; PDF-only entries link straight to the PDF.
+import { theGreatForgetting } from './posts/the-great-forgetting.js';
 import { theDoldrums } from './posts/the-doldrums.js';
 import { massDriftTheory } from './posts/mass-drift-theory.js';
 
 export const POSTS = [
+  theGreatForgetting,
   theDoldrums,
   massDriftTheory,
 ];
