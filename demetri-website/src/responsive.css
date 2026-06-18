@@ -53,6 +53,10 @@
       flex-direction: column !important;
       gap: 32px !important;
       min-height: auto !important;
+      /* Desktop sets align-items: start for the grid; on mobile the stacked
+         columns must span the full width or the centered content (page name,
+         quote) shrink-wraps and ends up left-aligned. */
+      align-items: stretch !important;
     }
     
     /* Row 1: Logo, Page Name, Quote - FORCE CENTER EVERYTHING */
