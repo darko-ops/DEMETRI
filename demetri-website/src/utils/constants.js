@@ -78,7 +78,7 @@ export const CAROUSEL_CONFIG = {
       description: "An interactive demo you can try in the browser.",
       url: "https://thebouncr.com",
       logo: "/bouncr-logo.png",
-      bg: "#ffffff"
+      bg: "#6d28d9"
     },
     {
       name: "RRSRCH",
@@ -97,7 +97,8 @@ export const CAROUSEL_CONFIG = {
       name: "DAED",
       description: "Headquarters",
       url: "https://daed.io",
-      bg: "#faf7f2",
+      bg: "#ff8000", // McLaren papaya
+      blackText: true,
       textColor: "#000000",
       wordmark: "æ",
       wordmarkStyle: {
@@ -112,8 +113,8 @@ export const CAROUSEL_CONFIG = {
       description: "In development — launching soon.", // Placeholder copy
       url: "https://www.dromo.fit",
       comingSoon: true,
-      bg: "#1a1a1a",
-      textColor: "#22d3ee"
+      bg: "#22d3ee",
+      blackText: true
     }
 
   ];

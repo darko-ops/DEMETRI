@@ -8,6 +8,17 @@ import { PROJECTS } from '../utils/constants';
 const INTER = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
 const MONO = "'IBM Plex Mono', 'SF Mono', Menlo, monospace";
 
+// True for backgrounds dark enough to need white lettering.
+const isDarkColor = (hex) => {
+  if (!hex) return false;
+  const h = hex.replace('#', '');
+  const v = h.length === 3 ? h.split('').map((c) => c + c).join('') : h;
+  const r = parseInt(v.slice(0, 2), 16);
+  const g = parseInt(v.slice(2, 4), 16);
+  const b = parseInt(v.slice(4, 6), 16);
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b < 128;
+};
+
 const css = `
 .works-index {
   margin-top: 40px;
@@ -15,10 +26,40 @@ const css = `
 }
 .works-row {
   display: block;
-  width: 100%;
   border-bottom: 1px solid #ededea;
-  padding: 28px 0 22px;
+  padding: 28px 24px 22px;
+  margin: 0 -24px;
   text-decoration: none;
+  transition: background-color 0.35s ease;
+}
+.works-row--open {
+  background: var(--row-bg, transparent);
+}
+.works-row--dark.works-row--open .works-name,
+.works-row--dark.works-row--open .works-name--muted {
+  color: #ffffff;
+}
+.works-row--dark.works-row--open .works-desc-inline,
+.works-row--dark.works-row--open .works-desc-text,
+.works-row--dark.works-row--open .works-num,
+.works-row--dark.works-row--open .works-plus {
+  color: rgba(255, 255, 255, 0.72);
+}
+.works-row--dark.works-row--open .works-visit {
+  color: #ffffff;
+}
+.works-row--black.works-row--open .works-name,
+.works-row--black.works-row--open .works-name--muted {
+  color: #000000;
+}
+.works-row--black.works-row--open .works-desc-inline,
+.works-row--black.works-row--open .works-desc-text,
+.works-row--black.works-row--open .works-num,
+.works-row--black.works-row--open .works-plus {
+  color: rgba(0, 0, 0, 0.65);
+}
+.works-row--black.works-row--open .works-visit {
+  color: #000000;
 }
 .works-row--link {
   cursor: pointer;
@@ -46,6 +87,7 @@ const css = `
   letter-spacing: -0.04em;
   line-height: 1.05;
   color: #545454; /* matches PROJECTS/GENIUS page title grey (theme.colors.secondary) */
+  transition: color 0.35s ease;
 }
 .works-name--muted {
   color: #c9c4bb;
@@ -120,7 +162,8 @@ const css = `
     font-size: 40px;
   }
   .works-row {
-    padding: 22px 0 18px;
+    padding: 22px 20px 18px;
+    margin: 0 -20px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -153,6 +196,12 @@ const ProjectGrid = () => {
         const muted = project.comingSoon || !project.url;
         const num = String(i + 1).padStart(2, '0');
         const descId = `works-desc-${project.name.toLowerCase().replace(/\s+/g, '-')}`;
+        const rowColorClass = project.blackText
+          ? ' works-row--black'
+          : project.whiteText || isDarkColor(project.bg)
+            ? ' works-row--dark'
+            : '';
+        const rowColorStyle = project.bg ? { '--row-bg': project.bg } : undefined;
 
         const rowTop = (
           <span className="works-row-top">
@@ -180,7 +229,8 @@ const ProjectGrid = () => {
           return (
             <div
               key={project.name}
-              className={`works-row${isOpen ? ' works-row--open' : ''}`}
+              className={`works-row${rowColorClass}${isOpen ? ' works-row--open' : ''}`}
+              style={rowColorStyle}
             >
               <button
                 type="button"
@@ -216,7 +266,8 @@ const ProjectGrid = () => {
           <RowTag
             key={project.name}
             {...rowProps}
-            className={`works-row works-row--link${isOpen ? ' works-row--open' : ''}`}
+            className={`works-row works-row--link${rowColorClass}${isOpen ? ' works-row--open' : ''}`}
+            style={rowColorStyle}
             onMouseEnter={() => setExpanded(project.name)}
             onMouseLeave={() =>
               setExpanded((cur) => (cur === project.name ? null : cur))
