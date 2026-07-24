@@ -2,6 +2,7 @@
 // Full paper text sourced from the original PDF.
 export const massDriftTheory = {
   slug: 'mass-drift-theory',
+  category: 'Dynamics',
   title: 'Mass Drift Theory',
   subtitle: 'A Macrodynamic Framework for Systemic Shifts in Collective Opinion',
   byline: 'Demetri Constantine Hodges',

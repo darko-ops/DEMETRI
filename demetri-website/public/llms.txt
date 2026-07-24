@@ -15,6 +15,9 @@ Personal site: https://demetri.xyz/
 
 ## Writing
 
+- [The Fairness–Discoverability Ceiling](https://demetri.xyz/papers/the-fairness-discoverability-ceiling.pdf): A worked negative result in long-horizon agent evaluation — why "spontaneously hard," "fair to grade," and "deterministically gradeable" can't hold at once (June 2026).
+- [The Test That Broke Because the AI Was Right](https://demetri.xyz/papers/the-test-that-broke.pdf): The accessible story of an AI eval that broke because the model was reasoning correctly — on fairness and self-deception (June 2026).
+- [The Lies I Loved](https://demetri.xyz/papers/the-lies-i-loved.pdf): Meditations on time, truth, and the cost of self-deception (June 2026).
 - [The Great Forgetting](https://demetri.xyz/papers/the-great-forgetting.pdf): On knowledge, wisdom, and the cost of infinite access (June 2026).
 - [The Doldrums](https://demetri.xyz/papers/the-doldrums.pdf): On consciousness, cognition, and human succession (June 2026).
 - [Mass Drift Theory](https://demetri.xyz/papers/Mass%20Drift%20Theory-%20A%20Macrodynamic%20Framework%20for%20Systemic%20Shifts%20in%20Collective%20Opinion.pdf): A macrodynamic framework for systemic shifts in collective opinion (May 2025).

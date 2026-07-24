@@ -2,6 +2,7 @@
 // Full essay text sourced from the original manuscript (great-forgetting-.docx).
 export const theGreatForgetting = {
   slug: 'the-great-forgetting',
+  category: 'Dynamics',
   title: 'The Great Forgetting',
   subtitle: 'On Knowledge, Wisdom, and the Cost of Infinite Access',
   byline: 'Demetri C. Hodges',

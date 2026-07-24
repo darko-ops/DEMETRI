@@ -2,6 +2,7 @@
 // Full essay text sourced from the original manuscript (the-doldrums.docx).
 export const theDoldrums = {
   slug: 'the-doldrums',
+  category: 'Dynamics',
   title: 'The Doldrums',
   subtitle: 'On Consciousness, Cognition, and Human Succession',
   byline: 'Demetri C. Hodges',
