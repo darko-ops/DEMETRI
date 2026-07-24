@@ -2,9 +2,27 @@
 import React from 'react';
 import { theme } from '../styles/theme';
 
+const titleFadeCss = `
+@keyframes hero-title-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-site-title {
+  opacity: 0;
+  animation: hero-title-fade 3s ease forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-site-title {
+    opacity: 1;
+    animation: none;
+  }
+}
+`;
+
 const Hero = () => {
   return (
     <div style={styles.hero}>
+      <style>{titleFadeCss}</style>
       <div style={styles.heroContent}>
         <p style={styles.subheadline}>INTELLIGENCE : RESEARCH</p>
         
@@ -18,7 +36,7 @@ const Hero = () => {
           />
         </div>
         
-        <h1 style={styles.siteTitle} data-hero-title>
+        <h1 style={styles.siteTitle} className="hero-site-title" data-hero-title>
           DEMETRI<span style={{ color: 'white' }}>.XYZ</span>
         </h1>
         <h2 style={styles.headline} data-hero-headline>
