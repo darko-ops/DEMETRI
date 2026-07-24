@@ -7,6 +7,8 @@ import AboutPage from './components/AboutPage.jsx'
 import ProjectsPage from './components/ProjectsPage.jsx'
 import BlogIndexPage from './components/BlogIndexPage.jsx'
 import BlogPost from './components/BlogPost.jsx'
+import ConnectPage from './components/ConnectPage.jsx'
+import SoundPage from './components/SoundPage.jsx'
 import { getPost } from './content/posts.js'
 
 function elementForPath(pathname) {
@@ -15,6 +17,12 @@ function elementForPath(pathname) {
   }
   if (pathname === '/projects' || pathname === '/projects/') {
     return <ProjectsPage />
+  }
+  if (pathname === '/connect' || pathname === '/connect/') {
+    return <ConnectPage />
+  }
+  if (pathname === '/sound' || pathname === '/sound/') {
+    return <SoundPage />
   }
   if (pathname === '/blog' || pathname === '/blog/') {
     return <BlogIndexPage />

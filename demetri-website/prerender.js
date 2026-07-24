@@ -328,7 +328,80 @@ writeFile(
   })
 )
 
+// --- Connect (contact) page ---
+const connectDescription =
+  'Get in touch with Demetri Hodges — email, LinkedIn, X, and Substack.'
+
+const connectJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  url: `${SITE}/connect/`,
+  name: 'Connect — Demetri Hodges',
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Demetri Hodges',
+    url: `${SITE}/`,
+    email: 'mailto:demetri@rrsrch.com',
+    sameAs: [
+      'https://www.linkedin.com/in/demetri-hodges-418534195/',
+      'https://x.com/demetrixyz',
+      'https://substack.com/@demetrixyz',
+    ],
+  },
+}
+
+const connectHead = `    <meta property="og:type" content="website" />
+    <meta property="og:url" content="${SITE}/connect/" />
+    <meta property="og:site_name" content="Demetri Hodges" />
+    <meta property="og:title" content="Connect — Demetri Hodges" />
+    <meta property="og:description" content="${escapeAttr(connectDescription)}" />
+    <meta property="og:image" content="${SITE}/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Connect — Demetri Hodges" />
+    <meta name="twitter:description" content="${escapeAttr(connectDescription)}" />
+    <meta name="twitter:image" content="${SITE}/og-image.jpg" />
+    <script type="application/ld+json">
+${JSON.stringify(connectJsonLd, null, 2)}
+    </script>`
+
+writeFile(
+  'connect/index.html',
+  pageHtml({
+    title: 'Connect — Demetri Hodges',
+    description: connectDescription,
+    canonical: `${SITE}/connect/`,
+    headExtra: connectHead,
+    bodyHtml: render('/connect/'),
+  })
+)
+
+// --- Sound (playlist) page ---
+const soundDescription =
+  'Elevator Music — a rotating playlist of what plays while Demetri Hodges works.'
+
+const soundHead = `    <meta property="og:type" content="website" />
+    <meta property="og:url" content="${SITE}/sound/" />
+    <meta property="og:site_name" content="Demetri Hodges" />
+    <meta property="og:title" content="Sound — Demetri Hodges" />
+    <meta property="og:description" content="${escapeAttr(soundDescription)}" />
+    <meta property="og:image" content="${SITE}/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sound — Demetri Hodges" />
+    <meta name="twitter:description" content="${escapeAttr(soundDescription)}" />
+    <meta name="twitter:image" content="${SITE}/og-image.jpg" />`
+
+writeFile(
+  'sound/index.html',
+  pageHtml({
+    title: 'Sound — Demetri Hodges',
+    description: soundDescription,
+    canonical: `${SITE}/sound/`,
+    headExtra: soundHead,
+    bodyHtml: render('/sound/'),
+  })
+)
+
 // The SSR bundle is only needed during the build — don't ship it.
 fs.rmSync(serverDir, { recursive: true, force: true })
 
-console.log(`Prerendered home + /about/ + /projects/ + /blog/ index + ${pageCount} post page(s).`)
+console.log(`Prerendered home + /about/ + /projects/ + /connect/ + /sound/ + /blog/ index + ${pageCount} post page(s).`)

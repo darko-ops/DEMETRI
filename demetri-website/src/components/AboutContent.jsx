@@ -9,7 +9,7 @@ const AboutContent = () => {
   return (
     <div style={styles.aboutSection} data-section-container>
       {/* Background */}
-      <h1 style={styles.title} data-section-title>Background</h1>
+      <h1 style={styles.title}>BACKGROUND</h1>
       <div style={styles.prose}>
         {BACKGROUND.map((paragraph, i) => (
           <p key={i} style={styles.paragraph}>{paragraph}</p>
@@ -17,7 +17,7 @@ const AboutContent = () => {
       </div>
 
       {/* Experience */}
-      <h2 style={styles.sectionHeading}>Experience</h2>
+      <h2 style={styles.sectionHeading}>EXPERIENCE</h2>
       <div style={styles.entries}>
         {EXPERIENCE.map((item, i) => (
           <div key={i} style={styles.entry}>
@@ -44,7 +44,7 @@ const AboutContent = () => {
       </div>
 
       {/* Education */}
-      <h2 style={styles.sectionHeading}>Education</h2>
+      <h2 style={styles.sectionHeading}>EDUCATION</h2>
       <div style={styles.entries}>
         {EDUCATION.map((item, i) => (
           <div key={i} style={styles.entry}>
@@ -69,20 +69,20 @@ const styles = {
     minHeight: 'calc(100vh - 200px)',
   },
   title: {
-    fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.sizes['2xl'],
-    fontWeight: theme.typography.weights.bold,
-    letterSpacing: '-0.02em',
-    color: theme.colors.secondary,
+    fontFamily: "'IBM Plex Mono', 'SF Mono', Menlo, monospace",
+    fontSize: '12px',
+    fontWeight: 400,
+    letterSpacing: '0.3em',
+    color: '#b8b3aa',
     textAlign: 'left',
     margin: `${theme.spacing.md} 0 ${theme.spacing.lg}`,
   },
   sectionHeading: {
-    fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.sizes.xl,
-    fontWeight: theme.typography.weights.bold,
-    letterSpacing: '-0.01em',
-    color: theme.colors.secondary,
+    fontFamily: "'IBM Plex Mono', 'SF Mono', Menlo, monospace",
+    fontSize: '12px',
+    fontWeight: 400,
+    letterSpacing: '0.3em',
+    color: '#b8b3aa',
     textAlign: 'left',
     margin: `${theme.spacing['3xl']} 0 ${theme.spacing.lg}`,
   },

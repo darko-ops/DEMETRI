@@ -6,7 +6,7 @@ import { theme } from '../styles/theme';
 const BlogSection = () => {
   return (
     <div style={styles.blogSection} data-section-container>
-      <h1 style={styles.title} data-section-title data-blog-title>Observations</h1>
+      <h1 style={styles.title}>OBSERVATIONS</h1>
       <BlogGrid />
     </div>
   );
@@ -20,13 +20,13 @@ const styles = {
     minHeight: 'calc(100vh - 200px)',
   },
   title: {
-    fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.sizes['2xl'],
-    fontWeight: theme.typography.weights.bold,
-    letterSpacing: '-0.02em',
-    color: theme.colors.secondary,
+    fontFamily: "'IBM Plex Mono', 'SF Mono', Menlo, monospace",
+    fontSize: '12px',
+    fontWeight: 400,
+    letterSpacing: '0.3em',
+    color: '#b8b3aa',
     textAlign: 'left',
-    margin: `${theme.spacing['0xl']} 0`,
+    margin: `${theme.spacing.md} 0 0`,
   },
 };
 

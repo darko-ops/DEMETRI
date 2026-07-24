@@ -25,6 +25,10 @@ export const CAROUSEL_CONFIG = {
     connect: {
       text: "SIMPLICITY    IS     THE\nULTIMATE     SOPHISTICATION.",
       author: "LEONARDO DA VINCI"
+    },
+    sound: {
+      text: "AMBIENT     MUSIC     MUST     BE\nAS     IGNORABLE     AS     IT\nIS     INTERESTING.",
+      author: "BRIAN ENO"
     }
   };
   
@@ -52,34 +56,91 @@ export const CAROUSEL_CONFIG = {
       label: "CONTACT",
       subtitle: "[CONTACT]",
       description: "Interested in collaborating, discussing ideas, or just saying hello? Best way to reach me is email. I read most of these and respond when I can. Also available on LinkedIn and GitHub for professional connections.",
+    },
+    sound: {
+      title: "SOUND",
+      label: "LISTEN",
+      subtitle: "[LISTEN]",
+      description: "A rotating playlist of what plays while I work — ambient, instrumental, and everything in between. Music for thinking, building, and riding elevators.",
     }
   };
   
   export const PROJECTS = [
     {
         name: "OBIUS",
-        description: "Download Now",
+        description: "The flagship. Available to download now.",
         url: "https://obius.io",
         logo: "/obius-logo.png",
         bg: "#2b2b2b"
       },
     {
       name: "BOUNCR",
-      description: "Try out the demo",
+      description: "An interactive demo you can try in the browser.",
       url: "https://thebouncr.com",
       logo: "/bouncr-logo.png",
       bg: "#ffffff"
     },
     {
-      name: "DROMO",
-      description: "Coming Soon",
+      name: "RRSRCH",
+      description: "Memory infrastructure for AI agents",
+      url: "https://rrsrch.com",
+      bg: "#000000",
+      // Match the rrsrch.com hero wordmark: Inter 800, tight tracking
+      wordmarkStyle: {
+        fontWeight: 800,
+        letterSpacing: "-0.1em",
+        lineHeight: 0.9,
+        fontSize: "3rem"
+      }
+    },
+    {
+      name: "DAED",
+      description: "Headquarters",
+      url: "https://daed.io",
+      bg: "#faf7f2",
+      textColor: "#000000",
+      wordmark: "æ",
+      wordmarkStyle: {
+        fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
+        fontWeight: 700,
+        fontSize: "5rem",
+        letterSpacing: "0"
+      }
+    },
+    {
+      name: "DRØMO",
+      description: "In development — launching soon.", // Placeholder copy
       url: "https://www.dromo.fit",
+      comingSoon: true,
       bg: "#1a1a1a",
       textColor: "#22d3ee"
     }
 
   ];
   
+  // Sound page — the "Circular Ruins" playlist rendered on /sound/.
+  export const SOUND = {
+    playlistUrl: "https://open.spotify.com/playlist/33vKbD3sBJAoA1XtQlLT2y",
+    tracks: [
+      { title: "'BIMMER'", artist: "Passing Currents", url: "https://open.spotify.com/track/46NbAamUC9bSoZVSBYqaSF", previewUrl: "https://p.scdn.co/mp3-preview/e151cb06f78de4967175a5c2f210ae5a8cbf91ad" },
+      { title: "through the night", artist: "LOMAJI", url: "https://open.spotify.com/track/42CsrwtgmKKvNgNX2ij5ks", previewUrl: "https://p.scdn.co/mp3-preview/85d9dd38676f1e61b06eb7b99d22eb0391cae89f" },
+      { title: "Alberto Balsalm", artist: "Aphex Twin", url: "https://open.spotify.com/track/6gbmylJ7sB7NFfMfTQHosf", previewUrl: "https://p.scdn.co/mp3-preview/8fb691a8c44cb0b80e33c55fd813c6d0400e5620" },
+      { title: "Avril 14th", artist: "Aphex Twin", url: "https://open.spotify.com/track/1uaGSDFsLdReQgg8p7Obwh", previewUrl: "https://p.scdn.co/mp3-preview/b4868232b4b2c1e04164f98740fd40bbff51859e" },
+      { title: "#3", artist: "Aphex Twin", url: "https://open.spotify.com/track/7glKwbR1DyuIuE6XvZvJbQ", previewUrl: "https://p.scdn.co/mp3-preview/fb49a7d2589b5c7c162c16e46daf69a087876cef" },
+      { title: "Xtal", artist: "Aphex Twin", url: "https://open.spotify.com/track/7o2AeQZzfCERsRmOM86EcB", previewUrl: "https://p.scdn.co/mp3-preview/b0300153aaed9f616a55b67b008a936e28dc3e07" },
+      { title: "We Chose You", artist: "Passing Currents", url: "https://open.spotify.com/track/1Pvn1rrZaY1QePkIBnOklS", previewUrl: "https://p.scdn.co/mp3-preview/165b60c58b846fbcab5102c05ca26363333f5c8a" },
+      { title: "ECSTASY", artist: "Passing Currents, Nedaj", url: "https://open.spotify.com/track/5lNRpG7TIKrR0fNvyvcmWi", previewUrl: "https://p.scdn.co/mp3-preview/53cda60224973219ca5bd6636f4beff71486ac5b" },
+      { title: "SMILEs", artist: "Passing Currents", url: "https://open.spotify.com/track/0H3NJf4dalsBgByaftUDve", previewUrl: "https://p.scdn.co/mp3-preview/9b78d3dca75b6115ef3dbab261eaa4c52b9c4767" },
+      { title: "Movements (Chapter III)", artist: "Leon Vynehall", url: "https://open.spotify.com/track/1OD2YXIOmfYmBAYfV1maRV", previewUrl: "https://p.scdn.co/mp3-preview/342724a3fff6630345242672337bc7fa60b93efe" },
+      { title: "Falaise", artist: "Floating Points", url: "https://open.spotify.com/track/3rkJH9BaiCWpRY718WTkBP", previewUrl: "https://p.scdn.co/mp3-preview/e009dee6833a481b87d2a2fbe2eb84c26487161b" },
+      { title: "zero", artist: "boy 2000", url: "https://open.spotify.com/track/7nwzk0lVlyP8a6nDAIMrHm", previewUrl: "https://p.scdn.co/mp3-preview/cfb02b06c9d8288b5586f978997df9fb000f4620" },
+      { title: "Pulsewidth", artist: "Aphex Twin", url: "https://open.spotify.com/track/643gyipSU7dkmrFhJ8UAIm", previewUrl: "https://p.scdn.co/mp3-preview/77bbeaf9f98d5433ef142fb31ef379c8c9c46978" },
+      { title: "UNDRESS", artist: "Passing Currents", url: "https://open.spotify.com/track/62OqqOKP1mJLJaz69U4N6h", previewUrl: "https://p.scdn.co/mp3-preview/9d0eea5f20991641fcbf3d725184bc555bf6e6d1" },
+      { title: "Fingerbib", artist: "Aphex Twin", url: "https://open.spotify.com/track/2hcywxHZcxmX27lX5qm8MT", previewUrl: "https://p.scdn.co/mp3-preview/ca3cb1df9488aabe08b66e9f6240e0a2ededc4a8" },
+      { title: "aisatsana [102]", artist: "Aphex Twin", url: "https://open.spotify.com/track/5ljMlD10En5rRGZU0cs2Np", previewUrl: "https://p.scdn.co/mp3-preview/6ac0d0ad805fdfd9d1e6e87c54a64e80580ded8b" },
+    ],
+  };
+
   export const CONTACTS = [
     {
       label: "EMAIL",
@@ -105,6 +166,27 @@ export const CAROUSEL_CONFIG = {
 
   // Blog posts array - add your posts here
 export const BLOG_POSTS = [
+    {
+        id: 9,
+        title: "The Fairness–Discoverability Ceiling",
+        date: "June 2026",
+        slug: "the-fairness-discoverability-ceiling",
+        url: "/papers/the-fairness-discoverability-ceiling.pdf"
+    },
+    {
+        id: 8,
+        title: "The Test That Broke Because the AI Was Right",
+        date: "June 2026",
+        slug: "the-test-that-broke",
+        url: "/papers/the-test-that-broke.pdf"
+    },
+    {
+        id: 7,
+        title: "The Lies I Loved",
+        date: "June 2026",
+        slug: "the-lies-i-loved",
+        url: "/papers/the-lies-i-loved.pdf"
+    },
     {
         id: 6,
         title: "The Great Forgetting",

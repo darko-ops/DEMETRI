@@ -1,9 +1,15 @@
 // src/components/BlogIndexPage.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { POSTS, postHref } from '../content/posts.js';
 import { theme } from '../styles/theme';
 
+// 'All' first, then each distinct category in the order it appears in POSTS.
+const CATEGORIES = ['All', ...Array.from(new Set(POSTS.map((p) => p.category).filter(Boolean)))];
+
 const BlogIndexPage = () => {
+  const [active, setActive] = useState('All');
+  const filtered = active === 'All' ? POSTS : POSTS.filter((post) => post.category === active);
+
   return (
     <div style={styles.page}>
       <header style={styles.topbar}>
@@ -14,12 +20,35 @@ const BlogIndexPage = () => {
       </header>
 
       <main style={styles.main}>
-        <h1 style={styles.title}>Writing</h1>
+        <h1 style={styles.title}>WRITING</h1>
+
+        {CATEGORIES.length > 1 && (
+          <div style={styles.filterBar} role="group" aria-label="Filter writing by category">
+            {CATEGORIES.map((cat) => {
+              const isActive = cat === active;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setActive(cat)}
+                  aria-pressed={isActive}
+                  style={{ ...styles.filterBtn, ...(isActive ? styles.filterBtnActive : {}) }}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         <ul style={styles.list}>
-          {POSTS.map((post) => (
+          {filtered.map((post) => (
             <li key={post.slug} style={styles.item}>
               <a href={postHref(post)} style={styles.postLink}>{post.title}</a>
-              <p style={styles.date}>{post.dateDisplay}</p>
+              <p style={styles.date}>
+                {post.dateDisplay}
+                {post.category ? ` · ${post.category}` : ''}
+              </p>
               {post.description && <p style={styles.desc}>{post.description}</p>}
             </li>
           ))}
@@ -71,12 +100,36 @@ const styles = {
     padding: `${theme.spacing.xl} ${theme.spacing.xl} ${theme.spacing['5xl']}`,
   },
   title: {
+    fontFamily: "'IBM Plex Mono', 'SF Mono', Menlo, monospace",
+    fontSize: '12px',
+    fontWeight: 400,
+    letterSpacing: '0.3em',
+    color: '#b8b3aa',
+    margin: `${theme.spacing.lg} 0 ${theme.spacing.lg}`,
+  },
+  filterBar: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: theme.spacing.sm,
+    margin: `0 0 ${theme.spacing['3xl']}`,
+  },
+  filterBtn: {
     fontFamily: theme.typography.fontFamily,
-    fontSize: '44px',
-    fontWeight: theme.typography.weights.bold,
-    letterSpacing: '-0.02em',
-    color: theme.colors.heading,
-    margin: `${theme.spacing.lg} 0 ${theme.spacing['3xl']}`,
+    fontSize: theme.typography.sizes.xs,
+    fontWeight: theme.typography.weights.normal,
+    letterSpacing: '0.05em',
+    textTransform: 'uppercase',
+    color: theme.colors.lightGray,
+    background: 'transparent',
+    border: `1px solid ${theme.colors.border}`,
+    borderRadius: '999px',
+    padding: '6px 14px',
+    cursor: 'pointer',
+  },
+  filterBtnActive: {
+    color: theme.colors.white,
+    background: theme.colors.heading,
+    borderColor: theme.colors.heading,
   },
   list: {
     listStyle: 'none',

@@ -5,6 +5,7 @@ import HomeContent from './components/HomeContent';
 import PodcastSection from './sections/PodcastSection';
 import BlogSection from './sections/BlogSection';
 import ProjectsSection from './sections/ProjectsSection';
+import SoundSection from './sections/SoundSection';
 import ConnectSection from './sections/ConnectSection';
 import { theme } from './styles/theme';
 
@@ -49,17 +50,29 @@ function App() {
       <div style={{ display: activeSection === 'projects' ? 'block' : 'none' }}>
         <ProjectsSection />
       </div>
+      <div style={{ display: activeSection === 'sound' ? 'block' : 'none' }}>
+        <SoundSection />
+      </div>
       <div style={{ display: activeSection === 'connect' ? 'block' : 'none' }}>
         <ConnectSection />
       </div>
 
       {/* Footer */}
       <footer style={styles.footer}>
-        <a href="/about/" style={styles.footerLink}>About</a>
-        <span style={styles.footerSep}>·</span>
-        <a href="/projects/" style={styles.footerLink}>Projects</a>
-        <span style={styles.footerSep}>·</span>
-        © {new Date().getFullYear()} Demetri. All rights reserved.
+        <div>
+          <a href="/about/" style={styles.footerLink}>About</a>
+          <span style={styles.footerSep}>·</span>
+          <a href="/projects/" style={styles.footerLink}>Projects</a>
+          <span style={styles.footerSep}>·</span>
+          <a href="/blog/" style={styles.footerLink}>Writing</a>
+          <span style={styles.footerSep}>·</span>
+          <a href="/sound/" style={styles.footerLink}>Sound</a>
+          <span style={styles.footerSep}>·</span>
+          <a href="/connect/" style={styles.footerLink}>Connect</a>
+        </div>
+        <span style={styles.footerCopy}>
+          © {new Date().getFullYear()} Demetri. All rights reserved.
+        </span>
       </footer>
     </div>
   );
@@ -78,8 +91,12 @@ const styles = {
   },
   footer: {
     fontFamily: theme.typography.fontFamily,
-    textAlign: 'center',
-    padding: '30px 0',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'baseline',
+    flexWrap: 'wrap',
+    gap: theme.spacing.md,
+    padding: '30px 60px',
     fontSize: theme.typography.sizes.sm,
     fontWeight: theme.typography.weights.normal,
     color: theme.colors.lightGray,
@@ -93,6 +110,10 @@ const styles = {
   footerSep: {
     margin: `0 ${theme.spacing.sm}`,
     color: theme.colors.lightGray,
+  },
+  footerCopy: {
+    marginLeft: 'auto',
+    textAlign: 'right',
   },
 };
 

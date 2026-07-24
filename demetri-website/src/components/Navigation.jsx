@@ -7,6 +7,7 @@ const Navigation = ({ activeSection, onSectionChange }) => {
     { key: 'podcast', label: 'About' },
     { key: 'blog', label: 'Writing' },
     { key: 'projects', label: 'Projects' },
+    { key: 'sound', label: 'Sound' },
     { key: 'connect', label: 'Connect' },
   ];
 

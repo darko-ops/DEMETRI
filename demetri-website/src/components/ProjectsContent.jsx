@@ -1,6 +1,6 @@
 // src/components/ProjectsContent.jsx
-// Shared "Works" heading + project grid, used by both the homepage Projects
-// section and the standalone /projects/ page.
+// Shared "WORKS" label + typographic project index, used by both the homepage
+// Projects section and the standalone /projects/ page.
 import React from 'react';
 import ProjectGrid from './ProjectGrid';
 import { theme } from '../styles/theme';
@@ -8,7 +8,7 @@ import { theme } from '../styles/theme';
 const ProjectsContent = () => {
   return (
     <div style={styles.projectsSection} data-section-container>
-      <h1 style={styles.title} data-section-title>Works</h1>
+      <h1 style={styles.title}>WORKS</h1>
       <ProjectGrid />
     </div>
   );
@@ -22,13 +22,13 @@ const styles = {
     minHeight: 'calc(100vh - 200px)',
   },
   title: {
-    fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.sizes['2xl'],
-    fontWeight: theme.typography.weights.bold,
-    letterSpacing: '-0.02em',
-    color: theme.colors.secondary,
+    fontFamily: "'IBM Plex Mono', 'SF Mono', Menlo, monospace",
+    fontSize: '12px',
+    fontWeight: 400,
+    letterSpacing: '0.3em',
+    color: '#b8b3aa',
     textAlign: 'left',
-    margin: `${theme.spacing.md} 0 ${theme.spacing.xl}`,
+    margin: `${theme.spacing.md} 0 0`,
   },
 };
 
