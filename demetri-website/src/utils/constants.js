@@ -67,8 +67,14 @@ export const CAROUSEL_CONFIG = {
   
   export const PROJECTS = [
     {
+      name: "PAREA",
+      description: "Life, with your people. Never miss a moment.",
+      url: "https://parea.photos",
+      bg: "#1F2B40" // the navy of Parea's tile on daed.io
+    },
+    {
         name: "OBIUS",
-        description: "The flagship. Available to download now.",
+        description: "Architect your thoughts. Available to download now.",
         url: "https://obius.io",
         logo: "/obius-logo.png",
         bg: "#2b2b2b"

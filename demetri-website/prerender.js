@@ -229,7 +229,7 @@ writeFile(
 
 // --- Projects (collection) page ---
 const projectsDescription =
-  'Products and projects built by Demetri Hodges — including Obius, Bouncr, and Dromo.'
+  'Products and projects built by Demetri Hodges — including Parea, Obius, Bouncr, and Dromo.'
 
 const PERSON_REF = { '@id': `${SITE}/#person` }
 
@@ -244,6 +244,20 @@ const projectsJsonLd = {
       {
         '@type': 'ListItem',
         position: 1,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: 'Parea',
+          url: 'https://parea.photos',
+          applicationCategory: 'SocialNetworkingApplication',
+          operatingSystem: 'Web',
+          description:
+            'Shared moments with your people: every photo from everyone who was there in one shared roll, with moments, reactions and chats to stay close in between.',
+          creator: PERSON_REF,
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
         item: {
           '@type': 'SoftwareApplication',
           name: 'Obius',
@@ -272,7 +286,7 @@ const projectsJsonLd = {
       },
       {
         '@type': 'ListItem',
-        position: 2,
+        position: 3,
         item: {
           '@type': 'SoftwareApplication',
           name: 'Bouncr',
@@ -286,7 +300,7 @@ const projectsJsonLd = {
       },
       {
         '@type': 'ListItem',
-        position: 3,
+        position: 4,
         item: {
           // Dromo is pre-launch (waitlist). Intentionally NO offers, price,
           // availability, or operatingSystem — nothing that implies it ships.

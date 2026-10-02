@@ -8,6 +8,7 @@ Personal site: https://demetri.xyz/
 
 ## Projects
 
+- [Parea](https://parea.photos): "Life, with your people." Shared moments with your people: every photo from everyone who was there in one shared roll, with moments, reactions and chats to stay close in between.
 - [Obius](https://obius.io): "Architect your thoughts." Node-based thinking and notes app with structure-aware AI, live reusable concepts, immutable versioning, and on-device storage. iOS, with macOS coming soon. Free tier; Pro at $9.99/mo.
 - [Bouncr](https://thebouncr.com): "Your paywall should haggle." Drop-in AI pricing-negotiation layer for subscription apps; a deterministic policy engine sets every price so the LLM can't be talked below your floor. Stripe settlement, MCP-native.
 - [Dromo](https://www.dromo.fit): "Run to the beat. Hit your pace." Pace-adaptive running music for iOS (coming soon) that locks your library's tempo to your cadence; on-device analysis, BPM-only data leaves the phone.
