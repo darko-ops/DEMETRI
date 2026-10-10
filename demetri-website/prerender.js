@@ -355,7 +355,7 @@ const connectJsonLd = {
     '@type': 'Person',
     name: 'Demetri Hodges',
     url: `${SITE}/`,
-    email: 'mailto:demetri@rrsrch.com',
+    email: 'mailto:demetri@daed.io',
     sameAs: [
       'https://www.linkedin.com/in/demetri-hodges-418534195/',
       'https://x.com/demetrixyz',

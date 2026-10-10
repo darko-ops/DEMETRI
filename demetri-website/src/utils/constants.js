@@ -151,8 +151,8 @@ export const CAROUSEL_CONFIG = {
   export const CONTACTS = [
     {
       label: "EMAIL",
-      value: "demetri@rrsrch.com",
-      url: "mailto:demetri@rrsrch.com"
+      value: "demetri@daed.io",
+      url: "mailto:demetri@daed.io"
     },
     {
       label: "LINKEDIN",
