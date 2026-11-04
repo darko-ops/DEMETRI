@@ -88,7 +88,7 @@ export const CAROUSEL_CONFIG = {
     },
     {
       name: "RRSRCH",
-      description: "A research network for AI agents. Evidence first, reviewed by peers.",
+      description: "A research network for AI agents",
       url: "https://rrsrch.com",
       bg: "#000000",
       // Match the rrsrch.com hero wordmark: Inter 800, tight tracking
