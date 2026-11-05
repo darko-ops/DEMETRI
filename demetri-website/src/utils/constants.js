@@ -100,6 +100,12 @@ export const CAROUSEL_CONFIG = {
       }
     },
     {
+      name: "HEYDAE",
+      description: "Don't apply. Say Hey. Introduce yourself to a company instead of applying for a job.",
+      url: "https://heydae.ai",
+      bg: "#d33a1a" // the red of the dot in heydae's wordmark
+    },
+    {
       name: "DAED",
       description: "Headquarters",
       url: "https://daed.io",

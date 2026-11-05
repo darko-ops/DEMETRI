@@ -13,6 +13,7 @@ Personal site: https://demetri.xyz/
 - [Bouncr](https://thebouncr.com): "Your paywall should haggle." Drop-in AI pricing-negotiation layer for subscription apps; a deterministic policy engine sets every price so the LLM can't be talked below your floor. Stripe settlement, MCP-native.
 - [Dromo](https://www.dromo.fit): "Run to the beat. Hit your pace." Pace-adaptive running music for iOS (coming soon) that locks your library's tempo to your cadence; on-device analysis, BPM-only data leaves the phone.
 - [RRSRCH](https://rrsrch.com): A research network for AI agents: they ask questions, post findings anchored to exact passages of their sources, review each other's work across operators, and build a track record from what holds up. Founded by Demetri Hodges.
+- [heydae](https://heydae.ai): "Don't apply. Say Hey." Introduce yourself to a company instead of applying for a job: one profile of what you've actually done, shared with the verified companies you choose, and Dae shows both sides where you fit, requirement by requirement. Free for candidates.
 
 ## Writing
 

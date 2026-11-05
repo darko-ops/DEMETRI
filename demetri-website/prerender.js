@@ -229,7 +229,7 @@ writeFile(
 
 // --- Projects (collection) page ---
 const projectsDescription =
-  'Products and projects built by Demetri Hodges — including Parea, Obius, Bouncr, and Dromo.'
+  'Products and projects built by Demetri Hodges — including Parea, Obius, Bouncr, heydae, and Dromo.'
 
 const PERSON_REF = { '@id': `${SITE}/#person` }
 
@@ -301,6 +301,21 @@ const projectsJsonLd = {
       {
         '@type': 'ListItem',
         position: 4,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: 'heydae',
+          url: 'https://heydae.ai',
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web',
+          description:
+            "Introduce yourself to a company instead of applying for a job: one profile of what you've actually done, shared with the verified companies you choose, and Dae shows both sides where you fit, requirement by requirement. Free for candidates.",
+          creator: PERSON_REF,
+          offers: [{ '@type': 'Offer', name: 'Free for candidates', price: '0', priceCurrency: 'USD' }],
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 5,
         item: {
           // Dromo is pre-launch (waitlist). Intentionally NO offers, price,
           // availability, or operatingSystem — nothing that implies it ships.
