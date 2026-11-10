@@ -106,6 +106,12 @@ export const CAROUSEL_CONFIG = {
       bg: "#d33a1a" // the red of the dot in heydae's wordmark
     },
     {
+      name: "OMINIS",
+      description: "An AI security lab. Small, local models that watch autonomous agents.",
+      url: "https://ominis.io",
+      bg: "#5c6634" // the olive of the ominis.io flock
+    },
+    {
       name: "DAED",
       description: "Headquarters",
       url: "https://daed.io",
